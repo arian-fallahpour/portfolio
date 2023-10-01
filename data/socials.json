@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Instagram",
+    "value": "arian.fallahpour",
+    "icon": "bi-instagram",
+    "link": "https://www.instagram.com/arian.fallahpour/"
+  },
+  {
+    "name": "LinkedIn",
+    "value": "arian-fallahpour",
+    "icon": "bi-linkedin",
+    "link": "https://www.linkedin.com/in/arian-fallahpour/"
+  },
+  {
+    "name": "Facebook",
+    "value": "arian.fallahpour",
+    "icon": "bi-facebook",
+    "link": "https://www.facebook.com/arian.fallahpour.3/"
+  },
+  {
+    "name": "Github",
+    "value": "arian-fallahpour",
+    "icon": "bi-github",
+    "link": "https://github.com/arian-fallahpour"
+  },
+  {
+    "name": "Email",
+    "value": "arianf2004@gmail.com",
+    "icon": "bi-envelope-fill",
+    "link": "mailto:arianf2004@gmail.com"
+  },
+  {
+    "name": "Phone",
+    "value": "6472825808",
+    "icon": "bi-telephone-fill",
+    "link": "tel:+16472825808"
+  }
+]

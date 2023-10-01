@@ -1,0 +1,56 @@
+section.ContactSection {
+}
+
+div.ContactContainer {
+  display: inherit;
+  gap: inherit;
+}
+
+.Contact {
+  $border: 0.2rem solid var(--c-primary);
+
+  border-radius: 2rem;
+  border: $border;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &Column,
+  &Row,
+  &Cell {
+    display: grid;
+  }
+
+  &Column {
+    &:not(:last-child) {
+      border-right: $border;
+    }
+  }
+
+  &Row {
+    &:not(:last-child) {
+      border-bottom: $border;
+    }
+  }
+
+  &Cell {
+    padding: var(--gap-sm);
+    align-items: center;
+  }
+}
+
+.Socials {
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-content: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.Social {
+  display: grid;
+  position: relative;
+  grid-template-columns: auto;
+}

@@ -1,0 +1,48 @@
+body,
+input,
+label,
+button,
+textarea,
+select {
+  line-height: 1.5;
+  font-size: var(--font-size);
+}
+
+.header {
+  line-height: 1.2;
+}
+
+.header-page {
+  font-size: 6rem;
+  text-transform: capitalize;
+  font-weight: 800;
+}
+
+.header-section {
+  font-size: 4rem;
+  text-transform: capitalize;
+  font-weight: 800;
+}
+
+.header-card {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.caption {
+  text-transform: uppercase;
+  font-size: var(--font-size);
+}
+
+.paragraph,
+.ul,
+.li {
+  font-size: var(--font-size);
+}

@@ -1,0 +1,97 @@
+.Header {
+  $blur-length: 20rem;
+
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+
+  display: grid;
+  align-items: center;
+
+  &Gradient,
+  &Grid {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+
+    mask-image: linear-gradient(
+      to bottom,
+      white calc(100% - #{$blur-length}),
+      transparent 100%
+    );
+  }
+
+  &Container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--gap-md);
+    align-items: center;
+    padding: var(--gap-md);
+  }
+
+  &Content {
+    display: grid;
+    justify-items: start;
+    gap: var(--gap-xs);
+
+    & > p {
+      max-width: 40rem;
+    }
+  }
+
+  &Title {
+  }
+
+  &Image {
+    height: auto;
+    width: 45rem;
+    aspect-ratio: 0.85;
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &Socials {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: var(--gap-xs);
+
+    list-style: none;
+  }
+
+  &Gradient {
+    filter: blur(100px) saturate(150%);
+    opacity: 0.25;
+    background-image: radial-gradient(
+        at 27% 37%,
+        hsla(215, 98%, 61%, 1) 0px,
+        transparent 0%
+      ),
+      radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
+      radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
+      radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+      radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+      radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+      radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+  }
+
+  &Grid {
+    background-image: url("/assets/app/grid.svg");
+
+    opacity: 0.4;
+    filter: invert(1);
+  }
+}

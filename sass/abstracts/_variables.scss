@@ -1,0 +1,35 @@
+:root {
+  // Colors
+  --c-primary-xl: #2b2b2b;
+  --c-primary-l: #373737;
+  --c-primary: #000000;
+
+  --c-grey-xl: #f1f1f1;
+  --c-grey-l: #e1e1e1;
+  --c-grey: #d3d3d3;
+  --c-grey-d: #c2c2c2;
+  --c-grey-xd: #c2c2c2;
+
+  --c-white: white;
+
+  // Backgrounds
+
+  // Gaps
+  --gap-xs: 1.5rem;
+  --gap-sm: 3rem;
+  --gap-md: 5rem;
+  --gap-lg: 7.5rem;
+  --gap-xl: 10rem;
+
+  // Border
+  // --border-radius: 0rem;
+
+  // Text colors
+
+  // Font
+  // --font-roboto: "Roboto", sans-serif; // Done through nextjs
+  // --font-playfair: "Playfair Display", serif; // Done through nextjs
+  --font-size: 1.5rem;
+
+  // Other
+}
