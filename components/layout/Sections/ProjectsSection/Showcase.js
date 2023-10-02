@@ -32,8 +32,9 @@ const Showcase = () => {
             <Image
               src={`/assets/app/projects/${content.src}`}
               alt={content.title}
+              sizes="(max-width: 1600px) 41vw, (max-width: 1200px) 47vw, (max-width: 800px) 64vw, 33vw"
+              objectFit="cover"
               fill
-              sizes="64rem"
             />
           )}
           {isActive && content.type === "youtube" && (

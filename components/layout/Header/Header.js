@@ -42,6 +42,9 @@ const Header = () => {
             src={src}
             alt="Photo of me leaning on a balcony at the Wynn Hotel in Las Vegas"
             fill
+            sizes="(max-width: 1600px) 30vw, (max-width: 1200px) 33vw, (max-width: 800px) 30vw, 33vw"
+            objectFit="cover"
+            quality={90}
             priority
           />
         </div>

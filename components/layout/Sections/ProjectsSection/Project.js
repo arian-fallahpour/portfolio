@@ -21,6 +21,9 @@ const Project = ({ index, image, name, description }) => {
         <Image
           src={`/assets/app/projects/${image}`}
           alt={`Cover image of ${name} project`}
+          sizes="(max-width: 1600px) 30vw, (max-width: 1200px) 34vw, (max-width: 800px) 38vw, 33vw"
+          objectFit="cover"
+          quality={80}
           fill
         />
       </div>
