@@ -33,7 +33,7 @@ const Showcase = () => {
               src={`/assets/app/projects/${content.src}`}
               alt={content.title}
               fill
-              priority
+              sizes="64rem"
             />
           )}
           {isActive && content.type === "youtube" && (
