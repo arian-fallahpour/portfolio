@@ -28,7 +28,7 @@ const Showcase = () => {
 
       <div className={join(classes.Showcase, isActive ? classes.active : null)}>
         <div className={classes.ShowcaseImage}>
-          {isActive && content.type === "image" && (
+          {content.type === "image" && (
             <Image
               src={`/assets/app/projects/${content.src}`}
               alt={content.title}
