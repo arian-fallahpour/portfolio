@@ -51,11 +51,9 @@ const Showcase = () => {
             ></iframe>
           )}
           {isActive && content.type === "video" && (
-            <video controls muted autoPlay>
-              <source
-                src={`/assets/app/projects/${content.src}`}
-                type="video/mp4"
-              />
+            <video controls autoPlay>
+              <source src={`/assets/app/projects/${content.src}.mp4`} />
+              <source src={`/assets/app/projects/${content.src}.webm`} />
             </video>
           )}
           <Button
