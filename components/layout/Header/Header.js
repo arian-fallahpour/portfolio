@@ -46,6 +46,7 @@ const Header = () => {
             objectFit="cover"
             quality={90}
             priority
+            loading="eager"
           />
         </div>
         <ul className={classes.HeaderSocials}>{Socials}</ul>

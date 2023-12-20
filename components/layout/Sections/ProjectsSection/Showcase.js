@@ -34,6 +34,7 @@ const Showcase = () => {
               alt={content.title}
               sizes="(max-width: 1600px) 41vw, (max-width: 1200px) 47vw, (max-width: 800px) 64vw, 33vw"
               objectFit="cover"
+              loading="eager"
               fill
             />
           )}
@@ -46,7 +47,16 @@ const Showcase = () => {
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
+              loading="eager"
             ></iframe>
+          )}
+          {isActive && content.type === "video" && (
+            <video controls muted autoPlay>
+              <source
+                src={`/assets/app/projects/${content.src}`}
+                type="video/mp4"
+              />
+            </video>
           )}
           <Button
             className={classes.ShowcasePrev}

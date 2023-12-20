@@ -2,7 +2,7 @@
   {
     "name": "Recycling Dispenser",
     "image": "garbage-2.jpeg",
-    "description": "The highlights of this project were visiting the Wynn Hotel, going to the pool at the Mirage Hotel, and eating all around the city!",
+    "description": "The highlights of this project were modelling the dispenser and gears to get the mechanism working, assembling the parts, then uploading the code to the robot so that it works properly!",
     "content": [
       {
         "type": "image",
@@ -18,8 +18,9 @@
       },
       {
         "type": "video",
-        "src": "garbage-3.mov",
-        "title": "Robot movement in action"
+        "src": "garbage-3.mp4",
+        "title": "Robot movement in action",
+        "description": "(May need to watch in fullscreen)"
       }
     ]
   },

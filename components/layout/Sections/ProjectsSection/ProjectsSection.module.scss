@@ -25,6 +25,9 @@ div.ProjectsContainer {
   border: $bezel solid transparent;
   box-shadow: 0 0 0 0.2rem var(--c-primary-xl);
 
+  display: grid;
+  grid-template-rows: auto 1fr;
+
   &:hover,
   &:focus-within {
     box-shadow: 0 0 0 0.2rem var(--c-primary);
@@ -41,6 +44,7 @@ div.ProjectsContainer {
     $border-radius: calc(#{$border-radius} - #{$bezel});
 
     display: grid;
+    grid-template-rows: auto 1fr auto;
     gap: var(--gap-xs);
     padding: var(--gap-sm);
     border-radius: 0 0 $border-radius $border-radius;
