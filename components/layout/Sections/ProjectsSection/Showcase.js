@@ -33,7 +33,7 @@ const Showcase = () => {
               src={`/assets/app/projects/${content.src}`}
               alt={content.title}
               sizes="(max-width: 700px) 90vw, 50vw"
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               loading="eager"
               fill
             />
