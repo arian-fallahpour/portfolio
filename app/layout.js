@@ -11,6 +11,10 @@ export const metadata = {
   title: "Arian Fallahpour",
   description:
     "Welcome to my personal portfolio website! Learn about my skills, my hobbies, some projects I have worked on and more!",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
