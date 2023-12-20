@@ -32,7 +32,7 @@ const Showcase = () => {
             <Image
               src={`/assets/app/projects/${content.src}`}
               alt={content.title}
-              sizes="(max-width: 1600px) 41vw, (max-width: 1200px) 47vw, (max-width: 800px) 64vw, 33vw"
+              sizes="(max-width: 700px) 90vw, 50vw"
               objectFit="cover"
               loading="eager"
               fill
