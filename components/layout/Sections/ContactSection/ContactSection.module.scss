@@ -1,9 +1,16 @@
+@import "@/sass/abstracts/mixins";
+
 section.ContactSection {
 }
 
 div.ContactContainer {
   display: inherit;
   gap: inherit;
+
+  @include respond(700) {
+    grid-template-columns: minmax(auto, 35rem);
+    justify-content: center;
+  }
 }
 
 .Contact {
@@ -15,6 +22,11 @@ div.ContactContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
+  @include respond(700) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
   &Column,
   &Row,
   &Cell {
@@ -24,6 +36,11 @@ div.ContactContainer {
   &Column {
     &:not(:last-child) {
       border-right: $border;
+
+      @include respond(700) {
+        border: 0;
+        border-bottom: $border;
+      }
     }
   }
 

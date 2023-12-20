@@ -16,6 +16,10 @@ select {
   font-size: 6rem;
   text-transform: capitalize;
   font-weight: 800;
+
+  @include respond(500) {
+    font-size: 4.5rem;
+  }
 }
 
 .header-section {

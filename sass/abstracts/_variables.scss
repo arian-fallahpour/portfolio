@@ -31,5 +31,9 @@
   // --font-playfair: "Playfair Display", serif; // Done through nextjs
   --font-size: 1.5rem;
 
+  @include respond(500) {
+    --font-size: 1.25rem;
+  }
+
   // Other
 }

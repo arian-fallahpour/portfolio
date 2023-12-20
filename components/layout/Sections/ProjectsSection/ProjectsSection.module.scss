@@ -14,6 +14,11 @@ div.ProjectsContainer {
   display: grid;
   gap: var(--gap-md);
   grid-template-columns: repeat(2, 1fr);
+
+  @include respond(700) {
+    grid-template-columns: repeat(1, minmax(auto, 45rem));
+    justify-content: center;
+  }
 }
 
 .Project {

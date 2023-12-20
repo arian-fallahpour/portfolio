@@ -36,6 +36,15 @@ div.Container {
   gap: var(--gap-sm);
   grid-template-columns: repeat(3, 1fr);
 
+  @include respond(800) {
+    grid-template-columns: repeat(2, minmax(auto, 30rem));
+    justify-content: center;
+  }
+
+  @include respond(600) {
+    grid-template-columns: minmax(auto, 30rem);
+  }
+
   &Column {
     display: grid;
     align-content: start;

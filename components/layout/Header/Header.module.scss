@@ -1,3 +1,5 @@
+@import "@/sass/abstracts/mixins.scss";
+
 .Header {
   $blur-length: 20rem;
 
@@ -31,6 +33,16 @@
     gap: var(--gap-md);
     align-items: center;
     padding: var(--gap-md);
+
+    @include respond(800) {
+      grid-template-columns: minmax(auto, 45rem);
+      justify-items: center;
+      justify-content: center;
+    }
+
+    @include respond(500) {
+      gap: var(--gap-sm);
+    }
   }
 
   &Content {
@@ -40,6 +52,11 @@
 
     & > p {
       max-width: 40rem;
+    }
+
+    @include respond(800) {
+      text-align: center;
+      justify-items: center;
     }
   }
 
@@ -53,6 +70,12 @@
     position: relative;
     border-radius: 2rem;
     overflow: hidden;
+
+    @include respond(800) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      width: 100%;
+    }
 
     & img {
       position: absolute;
@@ -70,6 +93,11 @@
     gap: var(--gap-xs);
 
     list-style: none;
+
+    @include respond(800) {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+    }
   }
 
   &Gradient {
