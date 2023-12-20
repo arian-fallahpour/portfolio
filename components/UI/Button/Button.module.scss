@@ -90,6 +90,7 @@
     border: 0.2rem solid rgba(white, 0.2);
     border-radius: 100%;
     backdrop-filter: blur(2px);
+    filter: drop-shadow(0 0.5rem rgba(black, 0.3));
 
     transition: color 0.2s ease, background 0.2s ease, border 0.2s ease;
 
