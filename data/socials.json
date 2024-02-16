@@ -1,21 +1,9 @@
 [
   {
-    "name": "Instagram",
-    "value": "arian.fallahpour",
-    "icon": "bi-instagram",
-    "link": "https://www.instagram.com/arian.fallahpour/"
-  },
-  {
     "name": "LinkedIn",
     "value": "arian-fallahpour",
     "icon": "bi-linkedin",
     "link": "https://www.linkedin.com/in/arian-fallahpour/"
-  },
-  {
-    "name": "Facebook",
-    "value": "arian.fallahpour",
-    "icon": "bi-facebook",
-    "link": "https://www.facebook.com/arian.fallahpour.3/"
   },
   {
     "name": "Github",

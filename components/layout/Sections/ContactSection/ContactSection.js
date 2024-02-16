@@ -18,13 +18,13 @@ const ContactSection = () => {
             <div className={classes.ContactRow}>
               <div className={classes.ContactCell}>
                 <h3 className="header header-card">email</h3>
-                <p className="paragraph">{socials[4].value}</p>
+                <p className="paragraph">{socials[2].value}</p>
               </div>
             </div>
             <div className={classes.ContactRow}>
               <div className={classes.ContactCell}>
                 <h3 className="header header-card">phone</h3>
-                <p className="paragraph">{socials[5].value}</p>
+                <p className="paragraph">{socials[3].value}</p>
               </div>
             </div>
           </div>
