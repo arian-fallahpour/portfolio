@@ -76,7 +76,7 @@ const Header = () => {
           </div>
         </div>
         <div className={classes.Image}>
-          <Image src="/images/portrait-1.jpeg" fill />
+          <Image src="/images/portrait-1.jpeg" priority fill alt="Arian Fallahpour" />
         </div>
       </div>
     </header>

@@ -78,13 +78,13 @@ const EducationSection = () => {
         <div className={classes.Certification}>
           <Button className={classes.Images} styleName="unstyled" onClick={showGalleryModalHandler}>
             <div className={classes.Image}>
-              <Image src="/images/certificates/react.jpg" fill />
+              <Image src="/images/certificates/react.jpg" alt="React Certificate" fill />
             </div>
             <div className={classes.Image}>
-              <Image src="/images/certificates/nodejs.jpg" fill />
+              <Image src="/images/certificates/nodejs.jpg" alt="NodeJs Certificate" fill />
             </div>
             <div className={classes.Image}>
-              <Image src="/images/certificates/javascript.jpg" fill />
+              <Image src="/images/certificates/javascript.jpg" alt="Javascript Certificate" fill />
             </div>
           </Button>
 
@@ -103,7 +103,7 @@ const EducationSection = () => {
           className={join(classes.Education, classes.EducationUniversity)}
         >
           <div className={classes.EducationLogo}>
-            <Image src={McMasterLogoSrc} />
+            <Image src={McMasterLogoSrc} alt="McMaster university logo" />
           </div>
           <p className="subtitle text-gradient-primary">university</p>
           <h3 className="header header-card">Software Engineering co-op</h3>
@@ -119,7 +119,7 @@ const EducationSection = () => {
           className={join(classes.Education, classes.EducationHighSchool)}
         >
           <div className={classes.EducationLogo}>
-            <Image src={LangstaffLogoSrc} />
+            <Image src={LangstaffLogoSrc} alt="Langstaff secondary school logo" />
           </div>
           <p className="subtitle text-gradient-primary">high school</p>
           <h3 className="header header-card">Langstaff Secondary School</h3>

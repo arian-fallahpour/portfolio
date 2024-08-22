@@ -64,7 +64,7 @@ const ProjectsSection = () => {
               </div>
             </div>
             <div className={classes[project.name + "Image"]}>
-              <Image src={project.coverImageSrc} fill />
+              <Image src={project.coverImageSrc} fill alt={`Project ${i + 1} cover`} />
             </div>
           </Project>
         ))}

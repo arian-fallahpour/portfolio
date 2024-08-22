@@ -79,7 +79,7 @@ const ContactSection = () => {
             className={classes.Figure}
           >
             <div className={classes.Image}>
-              <Image src="/images/portrait-1.jpeg" fill />
+              <Image src="/images/portrait-1.jpeg" fill alt="Arian Fallahpour" />
             </div>
           </ClipIn>
         </div>

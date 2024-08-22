@@ -33,7 +33,7 @@ const GalleryModal = ({ sources }) => {
               initial={{ translateX: `calc((100% + ${gapLength}) * ${i - activeSlideIndex})` }}
               animate={{ translateX: `calc((100% + ${gapLength}) * ${i - activeSlideIndex})` }}
             >
-              <Image src={source} fill />
+              <Image src={source} fill alt={`Photo ${i + 1}`} />
             </motion.div>
           ))}
         </div>
