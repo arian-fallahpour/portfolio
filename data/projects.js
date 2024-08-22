@@ -19,7 +19,7 @@ const projects = [
   },
   {
     name: "Exotify",
-    key: "exotify",
+    key: "exotify-2",
     coverImageSrc: "/images/projects/project-3.webp",
     skills: ["react", "nextJs", "sass"],
   },
