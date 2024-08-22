@@ -13,7 +13,7 @@ const animations = [
   {
     class: `.${classes.Image}`,
     styles: { opacity: 1, translate: 0 },
-    options: { duration: 0.5 },
+    options: { duration: 1, ease: "easeOut" },
   },
   {
     class: `.${classes.ContentRole}`,

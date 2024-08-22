@@ -104,7 +104,7 @@ section.ExperienceSection {
     &Line {
       display: block;
       position: relative;
-      border-top: 1px dashed var(--color-stripes);
+      border-top: var(--border-stripes);
     }
 
     &Outer {
@@ -114,7 +114,7 @@ section.ExperienceSection {
       left: 0;
       translate: -50% -50%;
       z-index: calc(var(--z-index-stripes) + 1);
-      border: 1px dashed var(--color-stripes);
+      border: var(--border-stripes);
       padding: 0.4rem;
       border-radius: 100%;
       background: var(--color-background-primary);

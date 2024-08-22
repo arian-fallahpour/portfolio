@@ -62,11 +62,13 @@ const ContactSection = () => {
               <ul className={classes.Links}>
                 {socials.map((social) => (
                   <li key={social.key} className={classes.Link}>
+                    <div className={classes.LinkInfo}>
+                      <h3 className="header header-text light">{social.name}</h3>
+                      <p className="paragraph light">{social.value}</p>
+                    </div>
                     <Button styleName="rounded">
                       <social.Icon />
                     </Button>
-                    <h3 className="header header-text light">{social.name}</h3>
-                    <p className="paragraph light">{social.value}</p>
                   </li>
                 ))}
               </ul>
