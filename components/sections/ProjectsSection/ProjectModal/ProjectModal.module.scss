@@ -1,0 +1,13 @@
+.Modal {
+  background-color: var(--color-background-primary);
+  border-radius: var(--border-radius);
+  width: calc(100vw - 2 * var(--width-sm));
+  height: calc(100vh - 2 * var(--width-sm));
+}
+
+button.Close {
+  position: absolute;
+  right: var(--width-sm);
+  top: var(--width-sm);
+  background-color: var(--color-foreground);
+}

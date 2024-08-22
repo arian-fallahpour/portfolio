@@ -68,6 +68,8 @@ section.ProjectsSection {
     & > :global(.subtitle) {
       font-size: 5rem;
       font-weight: 900;
+      line-height: 1;
+      text-align: left;
       // color: var(--color-primary);
     }
   }

@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./ProjectsSection.module.scss";
 import Magnetic from "@/components/elements/Magnetic/Magnetic";
 import { join } from "@/utils/helpers";
-import Link from "next/link";
+import Button from "@/components/elements/Button/Button";
+import { ModalContext } from "@/store/modal-context";
+import ProjectModal from "./ProjectModal/ProjectModal";
 
-const Project = ({ children, className, innerProps = {}, ...otherProps }) => {
+const Project = ({ children, className, project, onClick = (e) => {}, innerProps = {}, ...otherProps }) => {
+  const { showModal } = useContext(ModalContext);
+
+  const onClickHandler = (e) => {
+    onClick(e);
+
+    showModal(<ProjectModal project={project} />);
+  };
+
   return (
-    <Link className={join(classes.Project, className)} href="/" {...otherProps}>
+    <Button className={join(classes.Project, className)} styleName="unstyled" onClick={onClickHandler} {...otherProps}>
       <Magnetic {...innerProps} className={join(classes.ProjectContents, innerProps.className)}>
         {children}
       </Magnetic>
-    </Link>
+    </Button>
   );
 };
 
