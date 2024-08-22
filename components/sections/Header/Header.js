@@ -52,7 +52,7 @@ const Header = () => {
         animate(animation.class, animation.styles, animation.options);
       });
     }
-  }, [isInView]);
+  }, [isInView, animate]);
 
   return (
     <header ref={scope} className={join(classes.Header)}>

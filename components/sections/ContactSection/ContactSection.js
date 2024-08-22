@@ -37,7 +37,7 @@ const ContactSection = () => {
         animate(animation.selector, animation.styles, animation.options);
       });
     }
-  }, [isInView]);
+  }, [isInView, animate]);
 
   return (
     <Section ref={scope} className={classes.ContactSection}>

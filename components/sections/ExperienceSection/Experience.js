@@ -30,7 +30,7 @@ const Experience = ({ index, duration, name, role, list }) => {
         animate(animation.selector, animation.styles, animation.options);
       });
     }
-  }, [isInView]);
+  }, [isInView, animate]);
 
   return (
     <li ref={scope} className={classes.Experience}>

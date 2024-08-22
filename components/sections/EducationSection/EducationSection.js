@@ -52,7 +52,7 @@ const EducationSection = () => {
         animate(animation.class, animation.styles, animation.options);
       });
     }
-  }, [isInView]);
+  }, [isInView, animate]);
 
   const showGalleryModalHandler = () => {
     showModal(
