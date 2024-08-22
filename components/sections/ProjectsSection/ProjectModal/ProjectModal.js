@@ -9,10 +9,16 @@ const ProjectModal = ({ project }) => {
 
   return (
     <div className={classes.Modal}>
+      <div className={classes.Content}>
+        <div className={classes.Showcase}>
+          <video autoPlay muted>
+            <source src="/videos/turbotut-showcase.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
       <Button styleName="rounded" className={classes.Close} onClick={() => hideModal()}>
         <CloseIcon />
       </Button>
-      <div className={classes.Content}></div>
     </div>
   );
 };

@@ -20,9 +20,6 @@ export const ModalProvider = ({ children }) => {
   const hideModalHandler = () => {
     document.body.style.overflow = "auto";
     setIsVisible(false);
-    window.setTimeout(() => {
-      setContent(null);
-    }, 500);
   };
 
   const loginContext = {
