@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Arian Fallahpour",
+  title: "Arian's Portfolio",
   description:
     "Welcome to my personal portfolio website! Learn about my skills, my hobbies, some projects I have worked on and more!",
   icons: {
@@ -20,12 +20,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-        />
-      </head>
       <body className={inter.className}>
         <Providers>{children}</Providers>
       </body>

@@ -1,0 +1,146 @@
+@import "@/sass/abstracts/mixins";
+
+section.EducationSection {
+  max-width: calc(var(--width-section-max) + 0.5px);
+  padding: 0;
+  gap: 0;
+}
+
+.Divider {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  translate: -50%;
+
+  & .Line {
+    width: 100vw;
+    display: block;
+    border-top: var(--border-stripes);
+  }
+}
+
+.Header {
+  position: relative;
+  left: 50%;
+  top: 1px;
+  translate: -50%;
+  padding: var(--width-section-padding) 0;
+  border-bottom: var(--border-stripes);
+  background: var(--color-background-primary);
+  z-index: 5;
+  width: calc(100% - 4px);
+  height: calc(100% - 2px);
+
+  & > * {
+    opacity: 0;
+    translate: 0 2rem;
+  }
+}
+
+.Content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.Certification,
+.Education {
+  padding: var(--width-section-padding);
+  display: grid;
+  align-content: start;
+
+  &:hover,
+  &:focus-visible {
+    @include backgroundStripes(rgba(0, 0, 0, 0.05));
+  }
+
+  & > *:not(:last-child) {
+    margin-bottom: var(--width-text-spacing);
+  }
+
+  & > * {
+    opacity: 0;
+    translate: 0 2rem;
+  }
+}
+
+.Certification {
+  position: relative;
+  grid-row: 1 / span 2;
+
+  & > * {
+    opacity: 0;
+    translate: 0 2rem;
+  }
+}
+
+button.Images {
+  position: relative;
+  display: block;
+  width: 25rem;
+  aspect-ratio: 1.25;
+  filter: drop-shadow(0 0 3rem rgba(black, 0.1));
+  justify-self: center;
+
+  transition: scale 0.5s ease-in-out;
+
+  opacity: 0;
+  translate: 0 2rem;
+
+  &:hover,
+  &:focus-visible {
+    scale: 1.05;
+  }
+  &:hover .Image,
+  &:focus-visible .Image {
+    &:nth-child(1) {
+      transform: rotate(-13deg);
+    }
+
+    &:nth-child(2) {
+      transform: rotate(13deg);
+    }
+  }
+}
+
+.Image {
+  position: absolute;
+  aspect-ratio: calc(160 / 119);
+  width: 20rem;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+
+  transform-origin: 50% 100%;
+
+  transition: transform 0.5s ease-in-out;
+
+  &:nth-child(1) {
+    transform: rotate(-10deg);
+  }
+
+  &:nth-child(2) {
+    transform: rotate(10deg);
+  }
+}
+
+.Education {
+  &University {
+    border-bottom: var(--border-stripes);
+  }
+
+  &HighSchool {
+  }
+
+  &HighSchool &Logo {
+    width: 7.5rem;
+    overflow: hidden;
+    border-radius: 100%;
+  }
+
+  &Logo {
+    & > img {
+      width: 15rem;
+    }
+  }
+}

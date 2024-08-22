@@ -12,3 +12,19 @@ export function toCap(string) {
 export function formatNumber(number) {
   return number.slice(0, 3) + "-" + number.slice(3, 6) + "-" + number.slice(6);
 }
+
+export const debounce = (callback, delay) => {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      callback(...args);
+    }, delay);
+  };
+};
+
+export function runAnimations(animateFunction, animations) {
+  animations.forEach((animation) => {
+    animateFunction("." + animation.class, animation.style, animation.options);
+  });
+}

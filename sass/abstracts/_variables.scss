@@ -1,39 +1,63 @@
 :root {
   // Colors
-  --c-primary-xl: #2b2b2b;
-  --c-primary-l: #373737;
-  --c-primary: #000000;
+  --color-primary-light: rgb(0, 187, 255);
+  --color-primary-light-rgba: 0, 187, 255;
+  --color-primary: rgb(0, 119, 210);
+  --color-primary-rgb: 0, 118, 209;
+  --color-primary-dark: rgb(0, 92, 163);
+  --color-primary-dark-rgb: 0, 92, 163;
 
-  --c-grey-xl: #f1f1f1;
-  --c-grey-l: #e1e1e1;
-  --c-grey: #d3d3d3;
-  --c-grey-d: #c2c2c2;
-  --c-grey-xd: #c2c2c2;
+  --color-stripes: rgba(108, 108, 108, 0.355);
 
-  --c-white: white;
+  --color-background-primary: #fff;
+  --color-background-secondary: #2d3137;
+  --color-foreground: #ededed;
+  --color-panel-background: rgba(255, 255, 255, 0.1);
+  --color-panel-border: rgba(255, 255, 255, 0.3);
 
-  // Backgrounds
-
-  // Gaps
-  --gap-xs: 1.5rem;
-  --gap-sm: 3rem;
-  --gap-md: 5rem;
-  --gap-lg: 7.5rem;
-  --gap-xl: 10rem;
+  // widths
+  --width-xs: 1.5rem;
+  --width-sm: 3rem;
+  --width-md: 5rem;
+  --width-lg: 7.5rem;
+  --width-section-max: 110rem;
+  --width-section-padding: var(--width-sm);
+  --width-section-gap: var(--width-sm);
+  --width-text-spacing: 0.5em;
 
   // Border
-  // --border-radius: 0rem;
+  --border-radius: 2rem;
+  --border-stripes: 1px dashed var(--color-stripes);
+  --border-panel: 1px solid var(--color-panel-border);
 
   // Text colors
+  --text-color-title-light: #fff;
+  --text-color-title-dark: #000;
+  --text-color-subtitle-light: rgba(255, 255, 255, 0.6);
+  --text-color-subtitle-dark: rgba(0, 0, 0, 0.3);
+  --text-color-paragraph-light: rgb(188, 188, 188);
+  --text-color-paragraph-dark: rgb(55, 55, 55);
 
   // Font
-  // --font-roboto: "Roboto", sans-serif; // Done through nextjs
-  // --font-playfair: "Playfair Display", serif; // Done through nextjs
   --font-size: 1.5rem;
 
-  @include respond(500) {
-    --font-size: 1.25rem;
-  }
+  // Code
+  --code-background: #161b22;
+  --code-border: 1px solid #464b53;
+  --code-text-dark: #595e64;
+  --code-text-light: #a6a6a6;
+
+  // Shadow
+  --box-shadow-large: 0 1rem 3rem -1rem rgba(29, 42, 57, 0.8);
 
   // Other
+  --skills-foreground-1: #34383e;
+  --skills-foreground-2: #5b5f64;
+
+  --experience-number-background-1: rgb(40, 40, 40);
+  --experience-number-background-2: rgb(70, 70, 70);
+  --experience-timeline-border: var(--color-primary);
+
+  --z-index-stripes: 1;
+  --z-index-modal: 100;
 }

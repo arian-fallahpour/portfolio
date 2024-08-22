@@ -1,0 +1,101 @@
+@import "@/sass/abstracts/mixins";
+
+.SkillsSection {
+  padding: 0;
+}
+
+.Container {
+  display: grid;
+  justify-items: center;
+  gap: 0;
+  background-color: var(--color-background-secondary);
+}
+
+.Content {
+  max-width: var(--width-section-max);
+  width: 100%;
+  margin: auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  // padding: var(--width-sm) 0;
+}
+
+.Skills {
+  display: grid;
+  align-content: center;
+  gap: var(--width-section-gap);
+  padding: var(--width-section-gap);
+  height: 100%;
+  position: relative;
+
+  &Light {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    left: 0;
+    top: 50%;
+    translate: 0 -50%;
+    background: var(--color-primary);
+  }
+
+  &Header {
+    opacity: 0;
+    translate: 0 2rem;
+  }
+
+  &List {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
+  }
+
+  &ListItem {
+    opacity: 0;
+    translate: 0 2rem;
+  }
+}
+
+.Skill {
+  display: flex;
+  gap: var(--width-xs);
+  align-items: center;
+
+  color: var(--text-color-paragraph-light);
+
+  &Icon {
+    border-radius: 100%;
+    border: 1px solid var(--skills-foreground-2);
+    background-image: linear-gradient(
+      to top,
+      var(--skills-foreground-1) calc(50% - 20px),
+      var(--skills-foreground-2) calc(50% + 20px)
+    );
+    width: 5rem;
+    height: 5rem;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    & > svg {
+      width: 3rem;
+      height: 3rem;
+      color: var(--text-color-title-light);
+    }
+  }
+
+  &Name {
+    color: inherit;
+  }
+}
+
+.Code {
+  height: 50rem;
+  display: grid;
+  align-items: center;
+  padding: var(--width-section-gap);
+
+  @include backgroundStripes();
+}

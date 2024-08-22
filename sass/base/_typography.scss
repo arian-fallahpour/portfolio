@@ -8,18 +8,28 @@ select {
   font-size: var(--font-size);
 }
 
-.header {
-  line-height: 1.2;
+.header,
+.subtitle,
+.caption,
+.paragraph,
+.ul,
+.li {
+  z-index: var(--z-index-stripes);
 }
 
-.header-page {
+.header {
+  line-height: 1.2;
+  color: var(--text-color-title-dark);
+
+  &.light {
+    color: var(--text-color-title-light);
+  }
+}
+
+.header-title {
   font-size: 6rem;
   text-transform: capitalize;
   font-weight: 800;
-
-  @include respond(500) {
-    font-size: 4.5rem;
-  }
 }
 
 .header-section {
@@ -30,14 +40,21 @@ select {
 
 .header-card {
   font-size: 2rem;
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-weight: 700;
 }
 
 .subtitle {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 300;
   line-height: 1.2;
+  font-weight: 700;
+  color: var(--text-color-subtitle-dark);
+  text-transform: uppercase;
+
+  &.light {
+    color: var(--text-color-subtitle-light);
+  }
 }
 
 .caption {
@@ -49,4 +66,13 @@ select {
 .ul,
 .li {
   font-size: var(--font-size);
+  color: var(--text-color-paragraph-dark);
+
+  &.light {
+    color: var(--text-color-paragraph-light);
+  }
+}
+
+.ul {
+  padding-left: 2rem;
 }

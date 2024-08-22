@@ -1,0 +1,60 @@
+.Modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 100vw;
+  height: 100vh;
+  translate: -50% -50%;
+  z-index: var(--z-index-modal);
+
+  opacity: 0;
+  visibility: hidden;
+  backdrop-filter: blur(10px);
+  background-color: rgba(black, 0.2);
+
+  transition: opacity 0.2s ease-in-out, visibility 0.2s;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.visible &Content {
+    scale: 1;
+  }
+
+  &Content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    transition: scale 0.5s ease-in-out;
+    scale: 0.9;
+  }
+}
+
+.Modal > button.ModalClose {
+  position: absolute;
+  width: 4.5rem;
+  height: 4.5rem;
+  right: var(--width-sm);
+  top: var(--width-sm);
+  color: var(--text-color-title-light);
+  border-radius: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.2s ease-in-out;
+
+  & > svg {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: rgba(white, 0.2);
+  }
+}

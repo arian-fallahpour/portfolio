@@ -1,7 +1,0 @@
-@import "@/sass/abstracts/mixins.scss";
-
-.Container {
-  @include limitWidth();
-
-  position: relative;
-}

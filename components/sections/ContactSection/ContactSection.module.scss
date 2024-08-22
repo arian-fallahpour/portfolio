@@ -1,0 +1,90 @@
+@import "@/sass/abstracts/mixins";
+
+section.ContactSection {
+  padding: 0;
+}
+
+.Container {
+  display: grid;
+  justify-items: center;
+
+  margin-bottom: var(--width-sm);
+  background-color: var(--color-background-secondary);
+}
+
+.Main {
+  max-width: var(--width-section-max);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+.Details {
+  display: grid;
+  gap: var(--width-sm);
+  align-content: center;
+}
+
+.Header {
+  padding: 0 var(--width-sm);
+
+  display: grid;
+  gap: inherit;
+  align-content: start;
+  position: relative;
+
+  & > *:not(.HeaderLight) {
+    opacity: 0;
+    translate: 0 2rem;
+  }
+
+  &Light {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    left: 0;
+    top: 50%;
+    translate: 0 -50%;
+    background-color: var(--color-primary);
+  }
+}
+
+.Info {
+  padding: 0;
+}
+
+.Links {
+  display: grid;
+  gap: var(--width-xs);
+  list-style: none;
+  border-top: var(--border-stripes);
+  padding: var(--width-sm);
+}
+
+.Link {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: inherit;
+
+  opacity: 0;
+  translate: 0 2rem;
+}
+
+.Figure {
+  @include backgroundStripes();
+
+  display: grid;
+  padding: var(--width-md);
+}
+
+.Image {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+
+  opacity: 0;
+  translate: 2rem 0;
+}

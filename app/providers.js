@@ -1,10 +1,16 @@
 "use client";
 
-import { ProjectProvider } from "@/store/ProjectContext";
+import Modal from "@/components/elements/Modal/Modal";
+import { ModalProvider } from "@/store/modal-context";
 import React from "react";
 
 const Providers = ({ children }) => {
-  return <ProjectProvider>{children}</ProjectProvider>;
+  return (
+    <ModalProvider>
+      {children}
+      <Modal />
+    </ModalProvider>
+  );
 };
 
 export default Providers;

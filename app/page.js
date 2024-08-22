@@ -1,18 +1,22 @@
-import Header from "@/components/layout/Header/Header";
-import ContactSection from "@/components/layout/Sections/ContactSection/ContactSection";
-import ProjectsSection from "@/components/layout/Sections/ProjectsSection/ProjectsSection";
-import Showcase from "@/components/layout/Sections/ProjectsSection/Showcase";
-import SkillsSection from "@/components/layout/Sections/SkillsSection/SkillsSection";
-import { Fragment } from "react";
+import Page from "@/components/elements/Page/Page";
+import Stripes from "@/components/elements/Stripes/Stripes";
+import ContactSection from "@/components/sections/ContactSection/ContactSection";
+import EducationSection from "@/components/sections/EducationSection/EducationSection";
+import ExperienceSection from "@/components/sections/ExperienceSection/ExperienceSection";
+import Header from "@/components/sections/Header/Header";
+import ProjectsSection from "@/components/sections/ProjectsSection/ProjectsSection";
+import SkillsSection from "@/components/sections/SkillsSection/SkillsSection";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <Fragment>
-      <Showcase />
+    <Page>
       <Header />
+      <EducationSection />
       <SkillsSection />
+      <ExperienceSection />
       <ProjectsSection />
       <ContactSection />
-    </Fragment>
+      <Stripes />
+    </Page>
   );
 }

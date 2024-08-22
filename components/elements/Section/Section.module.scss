@@ -1,0 +1,8 @@
+.Section {
+  display: grid;
+  padding: var(--width-section-padding);
+  gap: var(--width-section-gap);
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}

@@ -1,7 +1,13 @@
-@mixin limitWidth($limit: 130rem) {
-  max-width: $limit;
-  width: 100%;
-  margin: 0 auto;
+@mixin backgroundStripes($color: rgba(255, 255, 255, 0.1)) {
+  background-color: rgba(255, 255, 255, 0);
+  opacity: 1;
+  background: repeating-linear-gradient(
+    45deg,
+    $color,
+    $color 2px,
+    rgba(255, 255, 255, 0) 2px,
+    rgba(255, 255, 255, 0) 10px
+  );
 }
 
 // MEDIA QUERY MANAGER

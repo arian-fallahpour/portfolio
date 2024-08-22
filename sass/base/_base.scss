@@ -59,6 +59,8 @@ body {
 
 .main {
   position: relative;
+  background-color: var(--color-background-primary);
+  overflow: hidden;
 }
 
 button {
