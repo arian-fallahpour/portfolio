@@ -52,10 +52,10 @@ const ContactSection = () => {
                 direction="vertical"
                 className={classes.HeaderLight}
               />
-              <h2 className="header header-section text-gradient-primary">Let's talk</h2>
+              <h2 className="header header-section text-gradient-primary">Let&apos;s talk</h2>
               <p className="paragraph light">
-                Don't be afraid to reach out! Whether you have a question, or you have a potential job offer, I'm always
-                available to help out!
+                Don&apos;t be afraid to reach out! Whether you have a question, or you have a potential job offer,
+                I&apos;m always available to help out!
               </p>
             </div>
             <ClipIn isVisible={isInView} direction="right" className={classes.Info}>
