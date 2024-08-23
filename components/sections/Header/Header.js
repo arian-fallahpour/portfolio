@@ -69,7 +69,7 @@ const Header = () => {
           </p>
           <div className={classes.Links}>
             {socials.map((social) => (
-              <Button key={social.key} className={classes.Link} styleName="shine" href={social.href} isLink>
+              <Button key={social.key} className={classes.Link} styleName="shine" href={social.href} isLink openNewTab>
                 <social.Icon />
               </Button>
             ))}

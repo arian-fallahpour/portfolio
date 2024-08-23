@@ -45,14 +45,14 @@ const ProjectsSection = () => {
           <h2 className="header header-section">Projects</h2>
         </div>
         {projects.map((project, i) => (
-          <Project key={project.key} className={classes[project.name]} project={project}>
+          <Project key={project.key} className={classes[project.key]} project={project}>
             <div className={classes.ProjectDetails}>
               <div className={classes.ProjectTitle}>
                 <p className="subtitle text-gradient-primary">0{i + 1}</p>
                 <h3 className="header header-card">{project.name}</h3>
               </div>
               <div className={classes.ProjectStack}>
-                {project.skills.reverse().map((key) => {
+                {project.skills.toReversed().map((key) => {
                   const skill = skillsMap.get(key);
                   return (
                     <div key={key} className={classes.Language}>
@@ -62,7 +62,7 @@ const ProjectsSection = () => {
                 })}
               </div>
             </div>
-            <div className={classes[project.name + "Image"]}>
+            <div className={classes[project.key + "Image"]}>
               <Image src={project.coverImageSrc} fill alt={`Project ${i + 1} cover`} />
             </div>
           </Project>

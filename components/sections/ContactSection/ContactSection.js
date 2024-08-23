@@ -66,7 +66,12 @@ const ContactSection = () => {
                       <h3 className="header header-text light">{social.name}</h3>
                       <p className="paragraph light">{social.value}</p>
                     </div>
-                    <Button styleName="rounded">
+                    <Button
+                      styleName="rounded"
+                      href={social.href}
+                      isLink
+                      openNewTab={social.key !== "email" || social.key !== "phone"}
+                    >
                       <social.Icon />
                     </Button>
                   </li>

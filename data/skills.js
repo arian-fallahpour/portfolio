@@ -1,4 +1,5 @@
 import AWSIcon from "@/components/elements/icons/AWSIcon";
+import { ChatGPTIcon } from "@/components/elements/icons/ChatGPTIcon";
 import CIcon from "@/components/elements/icons/CIcon";
 import ExpressJsIcon from "@/components/elements/icons/ExpressJsIcon";
 import GitIcon from "@/components/elements/icons/GitIcon";
@@ -19,76 +20,97 @@ const skills = [
     name: "Python",
     key: "python",
     Icon: PythonIcon,
+    visible: true,
   },
   {
     name: "Javascript",
     key: "javascript",
     Icon: JavascriptIcon,
+    visible: true,
   },
   {
     name: "C",
     key: "c",
     Icon: CIcon,
+    visible: true,
   },
   {
     name: "Sass",
     key: "sass",
     Icon: SassIcon,
+    visible: true,
   },
   {
     name: "React",
     key: "react",
     Icon: ReactIcon,
+    visible: true,
   },
   {
     name: "React Query",
     key: "reactQuery",
     Icon: ReactQueryIcon,
+    visible: true,
   },
   {
     name: "Jest",
     key: "jest",
     Icon: JestIcon,
+    visible: true,
   },
   {
     name: "NextJs",
     key: "nextJs",
     Icon: NextJsIcon,
+    visible: true,
   },
   {
     name: "NodeJs",
     key: "nodeJs",
     Icon: NodeJsIcon,
+    visible: true,
   },
   {
     name: "ExpressJs",
     key: "expressJs",
     Icon: ExpressJsIcon,
+    visible: true,
   },
   {
     name: "PuppeteerJs",
     key: "puppeteerJs",
     Icon: PuppeteerIcon,
+    visible: true,
   },
   {
     name: "Stripe",
     key: "stripe",
     Icon: StripeIcon,
+    visible: true,
   },
   {
     name: "AWS",
     key: "aws",
     Icon: AWSIcon,
+    visible: true,
   },
   {
     name: "MongoDB",
     key: "mongodb",
     Icon: MongoDBIcon,
+    visible: true,
   },
   {
     name: "Git",
     key: "git",
     Icon: GitIcon,
+    visible: true,
+  },
+  {
+    name: "ChatGPT",
+    key: "chatGPT",
+    Icon: ChatGPTIcon,
+    visible: false,
   },
 ];
 

@@ -49,11 +49,14 @@ const SkillsSection = () => {
             />
             <h2 className={join("header", "header-section", "light", classes.SkillsHeader)}>Skills</h2>
             <ul className={classes.SkillsList}>
-              {skills.map((skill) => (
-                <li key={skill.key} className={classes.SkillsListItem}>
-                  <Skill name={skill.name} Icon={skill.Icon} />
-                </li>
-              ))}
+              {skills.map(
+                (skill) =>
+                  skill.visible && (
+                    <li key={skill.key} className={classes.SkillsListItem}>
+                      <Skill name={skill.name} Icon={skill.Icon} />
+                    </li>
+                  )
+              )}
             </ul>
           </div>
           <ClipIn isVisible={isInView} direction="down" transition={{ delay: 0.5 }} className={classes.Code}>
