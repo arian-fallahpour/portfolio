@@ -52,14 +52,17 @@ const ProjectsSection = () => {
                 <h3 className="header header-card">{project.name}</h3>
               </div>
               <div className={classes.ProjectStack}>
-                {project.skills.toReversed().map((key) => {
-                  const skill = skillsMap.get(key);
-                  return (
-                    <div key={key} className={classes.Language}>
-                      <skill.Icon />
-                    </div>
-                  );
-                })}
+                {project.skills
+                  .slice(0)
+                  .reverse()
+                  .map((key) => {
+                    const skill = skillsMap.get(key);
+                    return (
+                      <div key={key} className={classes.Language}>
+                        <skill.Icon />
+                      </div>
+                    );
+                  })}
               </div>
             </div>
             <div className={classes[project.key + "Image"]}>
