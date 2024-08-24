@@ -108,8 +108,9 @@ const EducationSection = () => {
           <p className="subtitle text-gradient-primary">university</p>
           <h3 className="header header-card">Software Engineering co-op</h3>
           <ul className="ul">
-            <li className="li">Mars Rover Team</li>
-            <li className="li">Recyling robot</li>
+            <li className="li">Designed a wind turbine</li>
+            <li className="li">Created a recyling robot</li>
+            <li className="li">Created an ultrasonic blind cane for individuals with blindness</li>
           </ul>
         </ClipIn>
         <ClipIn
