@@ -91,9 +91,9 @@ const EducationSection = () => {
           <p className="subtitle text-gradient-primary">certifications</p>
           <h4 className="header header-card">Udemy</h4>
           <ul className="ul">
-            <li className="li">React - The Complete Guide 2024 (incl. Next.js, Redux)</li>
-            <li className="li">Node.js, Express, MongoDB & More: The Complete Bootcamp</li>
-            <li className="li">The Complete JavaScript Course 2024: From Zero to Expert!</li>
+            <li className="li">React - The Complete Guide 2024 (incl. Next.js, Redux) [2yrs]</li>
+            <li className="li">Node.js, Express, MongoDB & More: The Complete Bootcamp [4yrs]</li>
+            <li className="li">The Complete JavaScript Course 2024: From Zero to Expert! [4yrs]</li>
           </ul>
         </div>
         <ClipIn
