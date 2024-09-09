@@ -170,10 +170,10 @@ section.ProjectsSection {
 
   &Image {
     position: absolute;
-    width: 85%;
+    width: calc(100% - 2 * var(--width-sm));
     height: auto;
     aspect-ratio: 1;
-    top: 0;
+    bottom: var(--width-sm);
     left: 50%;
     translate: -50% 55%;
     border-radius: 1.5rem;
