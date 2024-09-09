@@ -20,13 +20,13 @@ const projects = [
     skills: ["react", "nextJs", "sass"],
     link: "https://exotify.ca/",
   },
-  {
-    name: "Canada Technics",
-    key: "CanadaTechnics",
-    coverImageSrc: "/images/projects/project-4.webp",
-    skills: ["react", "nextJs", "sass", "chatGPT"],
-    link: "https://www.canadatechnics.com/",
-  },
+  // {
+  //   name: "Canada Technics",
+  //   key: "CanadaTechnics",
+  //   coverImageSrc: "/images/projects/project-4.webp",
+  //   skills: ["react", "nextJs", "sass", "chatGPT"],
+  //   link: "https://www.canadatechnics.com/",
+  // },
 ];
 
 export default projects;

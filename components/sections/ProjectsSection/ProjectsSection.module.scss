@@ -160,8 +160,9 @@ section.ProjectsSection {
   }
 }
 
-.Exotify,
-.CanadaTechnics {
+.Exotify {
+  grid-row: 2 / span 2;
+
   &:hover &Image,
   &:focus-visible &Image {
     translate: -50% 50%;
@@ -182,6 +183,9 @@ section.ProjectsSection {
     transition: translate 0.5s ease-in-out;
   }
 }
+
+// .CanadaTechnics {
+// }
 
 /*
 .Macbook {
