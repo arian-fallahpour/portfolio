@@ -165,7 +165,8 @@ section.ProjectsSection {
 
   &:hover &Image,
   &:focus-visible &Image {
-    translate: -50% 50%;
+    scale: 1.1;
+    translate: calc(-50% + 3rem) -55%;
   }
 
   &Image {
@@ -175,12 +176,12 @@ section.ProjectsSection {
     aspect-ratio: 1;
     bottom: var(--width-sm);
     left: 50%;
-    translate: -50% 0;
+    translate: calc(-50% + 5rem) -40%;
     border-radius: 1.5rem;
     overflow: hidden;
-    filter: drop-shadow(0px 50px 100px rgba(50, 50, 93, 0.1));
+    filter: drop-shadow(0px 10px 30px rgba(50, 50, 93, 0.6));
 
-    transition: translate 0.5s ease-in-out;
+    transition: translate 0.5s ease-in-out, scale 0.5s ease-in-out;
   }
 }
 
