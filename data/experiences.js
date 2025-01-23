@@ -11,24 +11,23 @@ const experiences = [
     ],
   },
   {
-    name: "Sarpa Trattoria",
-    key: "sarpaTrattoria",
-    role: "assistant server",
-    duration: "May 2023 - June 2023",
-    list: [
-      "Served customers, parties and business meetings",
-      "Coordinated with co-workers to deliver a good experience",
-    ],
-  },
-  {
     name: "Exotify",
     key: "exotify",
     role: "founder",
     duration: "April 2023 - September 2023",
-
     list: [
       "Developed websites for businesses using Next.js",
       "Created a dashboard that would monitor website stability using PuppeteerJs",
+    ],
+  },
+  {
+    name: "Zero-To-Mastery Academy",
+    key: "exotify",
+    role: "Open Source Contributor",
+    duration: "December 2024 - Present",
+    list: [
+      "Improved codebase reability by refactoring code",
+      "Enhanced the user experience by utilizing React.js",
     ],
   },
 ];
