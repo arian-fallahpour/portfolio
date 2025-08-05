@@ -54,8 +54,8 @@ const ContactSection = () => {
               />
               <h2 className="header header-section text-gradient-primary">Let&apos;s talk</h2>
               <p className="paragraph light">
-                Don&apos;t be afraid to reach out! Whether you have a question, or you have a potential job offer,
-                I&apos;m always available to help out!
+                Don&apos;t be afraid to reach out! Whether you have a question, or you have a
+                potential job offer, I&apos;m always available to help out!
               </p>
             </div>
             <ClipIn isVisible={isInView} direction="right" className={classes.Info}>
@@ -86,7 +86,7 @@ const ContactSection = () => {
             className={classes.Figure}
           >
             <div className={classes.Image}>
-              <Image src="/images/portrait-1.jpeg" fill alt="Arian Fallahpour" />
+              <Image src="/images/portrait-2.jpeg" fill alt="Arian Fallahpour" />
             </div>
           </ClipIn>
         </div>

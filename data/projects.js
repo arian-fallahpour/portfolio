@@ -4,7 +4,7 @@ const projects = [
     key: "TurboTut",
     coverImageSrc: "/images/projects/project-1.webp",
     skills: ["react", "nextJs", "mongodb", "aws", "stripe"],
-    link: "https://turbotut.com/",
+    link: "https://turbotut.vercel.app/",
   },
   {
     name: "Natours",
@@ -18,7 +18,7 @@ const projects = [
     key: "Exotify",
     coverImageSrc: "/images/projects/project-3.webp",
     skills: ["react", "nextJs", "sass"],
-    link: "https://exotify.ca/",
+    link: "exotify-agency.vercel.app",
   },
 ];
 

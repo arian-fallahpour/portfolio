@@ -25,13 +25,6 @@ const socials = [
     Icon: MailIcon,
     href: "mailto:arianf2004@gmail.com",
   },
-  {
-    name: "Phone",
-    key: "phone",
-    value: "(647) 282 5808",
-    Icon: PhoneIcon,
-    href: "tel:+16472825808",
-  },
 ];
 
 export default socials;

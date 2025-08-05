@@ -59,24 +59,33 @@ const Header = () => {
       <div className={classes.Main}>
         <div className={classes.Content}>
           <p className={join("subtitle", classes.ContentRole)}>Software Engineer</p>
-          <h1 className={join("header", "header-title", "text-gradient-primary", classes.ContentName)}>
+          <h1
+            className={join("header", "header-title", "text-gradient-primary", classes.ContentName)}
+          >
             Arian Fallahpour
           </h1>
           <p className={join("paragraph", classes.ContentIntro)}>Welcome to my portfolio!</p>
           <p className={join("paragraph", classes.ContentDescription)}>
-            I showcase many of my greatest achievements, skills, hobbies, projects, and more so that you can get to know
-            me a bit better.
+            I showcase many of my greatest achievements, skills, hobbies, projects, and more so that
+            you can get to know me a bit better.
           </p>
           <div className={classes.Links}>
             {socials.map((social) => (
-              <Button key={social.key} className={classes.Link} styleName="shine" href={social.href} isLink openNewTab>
+              <Button
+                key={social.key}
+                className={classes.Link}
+                styleName="shine"
+                href={social.href}
+                isLink
+                openNewTab
+              >
                 <social.Icon />
               </Button>
             ))}
           </div>
         </div>
         <div className={classes.Image}>
-          <Image src="/images/portrait-1.jpeg" priority fill alt="Arian Fallahpour" />
+          <Image src="/images/portrait-1.jpg" priority fill alt="Arian Fallahpour" />
         </div>
       </div>
     </header>
