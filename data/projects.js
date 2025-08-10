@@ -18,7 +18,7 @@ const projects = [
     key: "Exotify",
     coverImageSrc: "/images/projects/project-3.webp",
     skills: ["react", "nextJs", "sass"],
-    link: "exotify-agency.vercel.app",
+    link: "https://exotify-agency.vercel.app",
   },
 ];
 
