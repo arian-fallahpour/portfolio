@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import classes from "./ExperienceSection.module.scss";
 import { stagger, useAnimate, useInView } from "framer-motion";
+import { join } from "@/utils/helpers";
 
 const animations = [
   {
@@ -33,7 +34,10 @@ const Experience = ({ index, duration, name, role, list }) => {
   }, [isInView, animate]);
 
   return (
-    <li ref={scope} className={classes.Experience}>
+    <li
+      ref={scope}
+      className={join(classes.Experience, index % 2 === 0 ? classes.even : classes.odd)}
+    >
       <div className={classes.ExperienceContainer}>
         <div className={classes.ExperienceNumber}>
           <div className={classes.ExperienceNumberOuter}>
@@ -50,7 +54,7 @@ const Experience = ({ index, duration, name, role, list }) => {
           </div>
           <ul className="ul">
             {list.map((item, i) => (
-              <li key={i} className="li">
+              <li key={i} className="li margin-bottom-auto">
                 {item}
               </li>
             ))}
