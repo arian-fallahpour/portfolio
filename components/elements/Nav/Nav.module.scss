@@ -1,0 +1,29 @@
+.Nav {
+  position: fixed;
+  left: var(--width-regular);
+  top: var(--width-regular);
+}
+
+.List {
+  display: flex;
+  gap: var(--width-small);
+  list-style: none;
+
+  background-color: var(--color-code-background);
+  border: 1px solid var(--color-code-border);
+  border-radius: 22rem;
+  padding: 2px;
+}
+
+.Item {
+}
+
+button.Link,
+a.Link {
+  background: transparent;
+
+  &:hover,
+  &:focus {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}

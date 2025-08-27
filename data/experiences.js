@@ -22,7 +22,7 @@ const experiences = [
   },
   {
     name: "Zero-To-Mastery Academy",
-    key: "exotify",
+    key: "ztm",
     role: "Open Source Contributor",
     duration: "December 2024 - January 2025",
     list: [
