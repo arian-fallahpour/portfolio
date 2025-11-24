@@ -7,6 +7,7 @@ const Page = ({ children }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       document.body.style.cursor = "none";
+      document.documentElement.style.cursor = "none";
     }, 100);
 
     return () => clearInterval(interval);

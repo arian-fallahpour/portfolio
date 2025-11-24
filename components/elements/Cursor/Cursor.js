@@ -4,13 +4,21 @@ import React, { Fragment, useEffect, useState, useRef } from "react";
 import classes from "./Cursor.module.scss";
 import { motion, useSpring } from "framer-motion";
 
-const defaultCursorHeight = 20;
-const defaultCursorWidth = defaultCursorHeight;
-const defaultCursorBorderRadius = defaultCursorHeight / 2;
+const defaultCursorStyles = {
+  width: 20,
+  height: 20,
+  borderRadius: 10,
+  opacity: 0.5,
+};
 
-const defaultRingHeight = 30;
-const defaultRingWidth = defaultRingHeight;
-const defaultRingBorderRadius = defaultRingHeight / 2;
+const defaultRingStyles = {
+  width: 30,
+  height: 30,
+  borderRadius: 15,
+  opacity: 1,
+};
+
+const outlineOffset = 10;
 
 const Cursor = () => {
   const [isDefaultMode, setIsDefaultMode] = useState(true);
@@ -19,19 +27,8 @@ const Cursor = () => {
   const ringX = useSpring(0, { stiffness: 50, damping: 10 });
   const ringY = useSpring(0, { stiffness: 50, damping: 10 });
 
-  const [cursorConfig, setCursorConfig] = useState({
-    width: defaultCursorWidth,
-    height: defaultCursorHeight,
-    borderRadius: defaultCursorBorderRadius,
-    opacity: 0,
-  });
-
-  const [ringConfig, setRingConfig] = useState({
-    width: defaultRingWidth,
-    height: defaultRingHeight,
-    borderRadius: defaultRingBorderRadius,
-    opacity: 1,
-  });
+  const [cursorConfig, setCursorConfig] = useState(defaultCursorStyles);
+  const [ringConfig, setRingConfig] = useState(defaultRingStyles);
 
   const isMouseDown = useRef(false);
 
@@ -75,6 +72,7 @@ const Cursor = () => {
         setRingConfig({ width: 0, height: 0, scale: 0, opacity: 0 });
       } else if (mode === "outline") {
         const rect = element.getBoundingClientRect();
+        const computed = window.getComputedStyle(element);
 
         cursorX.set(rect.left + rect.width / 2);
         cursorY.set(rect.top + rect.height / 2);
@@ -83,12 +81,14 @@ const Cursor = () => {
 
         setCursorConfig((prev) => ({ ...prev, width: 0, height: 0, opacity: 0 }));
 
-        const outlineOffset = 10;
+        const borderRadius = computed.borderRadius.endsWith("%")
+          ? rect.width / 2
+          : computed.borderRadius;
 
         setRingConfig({
           width: rect.width + 2 * outlineOffset,
           height: rect.height + 2 * outlineOffset,
-          borderRadius: outlineOffset,
+          borderRadius: borderRadius,
           scale: isMouseDown.current ? 0.9 : 1,
           opacity: 1,
         });
@@ -98,21 +98,8 @@ const Cursor = () => {
         ringX.set(e.clientX);
         ringY.set(e.clientY);
 
-        setCursorConfig({
-          width: defaultCursorWidth,
-          height: defaultCursorHeight,
-          borderRadius: defaultCursorBorderRadius,
-          opacity: 0.5,
-          scale: isMouseDown.current ? 1.4 : 1,
-        });
-
-        setRingConfig({
-          width: defaultRingWidth,
-          height: defaultRingHeight,
-          borderRadius: defaultRingBorderRadius,
-          scale: isMouseDown.current ? 0.5 : 1,
-          opacity: 1,
-        });
+        setCursorConfig(defaultCursorStyles);
+        setRingConfig(defaultRingStyles);
       }
     };
 

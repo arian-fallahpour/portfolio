@@ -10,7 +10,7 @@ import skillsData from "@/data/skills-data";
 const Project = ({ name, skills, href, imageSrc, index }) => {
   return (
     <Button className={classes.Project} styleName="unstyled" href={href} isLink openNewTab>
-      <Magnetic className={classes.Magnetic} maxShift={15} data-cursor="morph">
+      <Magnetic className={classes.Magnetic} maxShift={10} data-cursor="morph">
         <Image className={classes.Image} src={imageSrc} alt={`Project ${index + 1} cover`} />
         <span className={classes.Gradient} />
         <span className={classes.Shine} />

@@ -80,7 +80,7 @@ const Button = forwardRef(
     );
 
     if (isMagnetic) {
-      return <Magnetic maxShift={20}>{buttonElement}</Magnetic>;
+      return <Magnetic maxShift={10}>{buttonElement}</Magnetic>;
     } else {
       return buttonElement;
     }

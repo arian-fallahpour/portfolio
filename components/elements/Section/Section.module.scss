@@ -1,3 +1,5 @@
+@use "@/sass/abstracts/mixins" as *;
+
 .Section {
   display: grid;
   padding: var(--width-section-padding);

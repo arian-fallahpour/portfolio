@@ -1,6 +1,13 @@
+@use "@/sass/abstracts/mixins" as *;
+
 .Code {
   perspective: 105rem;
   margin-left: -3rem;
+
+  @include respond(1000px) {
+    max-width: 50rem;
+    margin-left: 0;
+  }
 }
 
 .Window {

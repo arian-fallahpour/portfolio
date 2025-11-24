@@ -1,7 +1,11 @@
-@import "@/sass/abstracts/mixins";
+@use "@/sass/abstracts/mixins" as *;
 
 section.SkillsSection {
   padding: 0;
+
+  @include respond(1000px) {
+    z-index: 2;
+  }
 }
 
 .Container {
@@ -18,6 +22,11 @@ section.SkillsSection {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
+
+  @include respond(1000px) {
+    grid-template-columns: 1fr;
+    max-width: 60rem;
+  }
 }
 
 .Skills {
@@ -37,11 +46,23 @@ section.SkillsSection {
     top: 50%;
     translate: 0 -50%;
     background: var(--color-primary);
+
+    @include respond(1000px) {
+      width: 100%;
+      height: 2px;
+      left: 50%;
+      top: 0;
+      translate: -50% 0;
+    }
   }
 
   &Header {
     opacity: 0;
     translate: 0 2rem;
+
+    @include respond(1000px) {
+      text-align: center;
+    }
   }
 
   &List {
@@ -49,6 +70,10 @@ section.SkillsSection {
     gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
     list-style: none;
+
+    @include respond(1000px) {
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
   }
 
   &ListItem {
@@ -92,6 +117,11 @@ section.SkillsSection {
 
   &Name {
     color: inherit;
+
+    @include respond(1000px) {
+      text-align: center;
+      flex: 1;
+    }
   }
 }
 

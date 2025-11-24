@@ -5,6 +5,11 @@ section.ProjectsSection {
   margin-bottom: var(--width-sm);
   // padding-left: 0;
   // padding-right: 0;
+
+  & :global(.section.section-header) {
+    opacity: 0;
+    translate: 0 2rem;
+  }
 }
 
 .Divider {
@@ -15,6 +20,11 @@ section.ProjectsSection {
   translate: -50% 0;
   border-top: var(--border-stripes);
   width: 100vw;
+}
+
+.Header {
+  opacity: 0;
+  translate: 0 2rem;
 }
 
 .Projects {
@@ -36,4 +46,11 @@ section.ProjectsSection {
   padding-right: var(--width-section-padding);
   width: max-content;
   min-width: 100%;
+}
+
+.Project {
+  position: relative;
+
+  opacity: 0;
+  translate: 0 2rem;
 }

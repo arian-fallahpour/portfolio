@@ -4,6 +4,17 @@ section.EducationSection {
   max-width: calc(var(--width-section-max) + 0.5px);
   padding: 0;
   gap: 0;
+
+  & > *:not(.Divider) {
+    @include respond(700) {
+      border-left: var(--border-stripes);
+      border-right: var(--border-stripes);
+      border-bottom: var(--border-stripes);
+      width: 100%;
+      background-color: var(--color-background-primary);
+      z-index: 2;
+    }
+  }
 }
 
 .Divider {
@@ -12,6 +23,10 @@ section.EducationSection {
   left: 50%;
   top: 0;
   translate: -50%;
+
+  @include respond(700) {
+    bottom: 100%;
+  }
 
   & .Line {
     width: 100vw;
@@ -32,6 +47,10 @@ section.EducationSection {
   width: calc(100% - 4px);
   height: calc(100% - 2px);
 
+  @include respond(700px) {
+    border-top: var(--border-stripes);
+  }
+
   & > * {
     opacity: 0;
     translate: 0 2rem;
@@ -41,6 +60,10 @@ section.EducationSection {
 .Content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  @include respond(700) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .Certification,
@@ -67,6 +90,10 @@ section.EducationSection {
 .Certification {
   position: relative;
   grid-row: 1 / span 2;
+
+  @include respond(700) {
+    border-bottom: var(--border-stripes);
+  }
 
   & > * {
     opacity: 0;
