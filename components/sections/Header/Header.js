@@ -5,8 +5,8 @@ import classes from "./Header.module.scss";
 import Image from "next/image";
 import Button from "@/components/elements/Button/Button";
 
-import socials from "@/data/socials";
-import { stagger, useAnimate, useInView } from "framer-motion";
+import socials from "@/data/socials-data";
+import { stagger, useAnimate, useInView } from "motion/react";
 import { join } from "@/utils/helpers";
 
 const animations = [

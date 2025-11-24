@@ -1,0 +1,106 @@
+.Project {
+  &:hover .Shine,
+  &:focus-visible .Shine {
+    background-position: 200% 0;
+    transition: background-position 0.5s ease-in-out;
+  }
+}
+
+.Magnetic {
+  position: relative;
+
+  border-radius: var(--border-radius);
+  overflow: hidden;
+
+  transition: scale 0.2s ease-in-out;
+
+  &:active {
+    scale: 0.98;
+    cursor: none;
+  }
+}
+
+.Image {
+  height: 50rem;
+  width: auto;
+}
+
+.Gradient,
+.Shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.Gradient {
+  background: linear-gradient(
+      to top,
+      rgba(var(--color-primary-rgb), 0.6) 0,
+      rgba(var(--color-primary-rgb), 0.6) 5%,
+      transparent 25%
+    ),
+    linear-gradient(to top, rgba(black, 0.9) 0, rgba(black, 0.9) 20%, transparent 25%);
+  mask-image: radial-gradient(circle at 50% 125%, black 0, transparent 50%);
+}
+
+.Shine {
+  filter: blur(30px);
+  background: linear-gradient(
+    65deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 45%,
+    rgba(255, 255, 255, 0.1) 55%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-position: -100% 0;
+  background-size: 50%;
+  background-repeat: no-repeat;
+
+  pointer-events: none;
+}
+
+.Content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  & > :global(.header) {
+    color: var(--text-color-title-light);
+    left: 50%;
+    translate: -50% 0;
+    bottom: 8rem;
+    position: absolute;
+  }
+}
+
+.Skills {
+  display: flex;
+
+  background-color: var(--color-background-primary);
+  border-radius: 22rem;
+
+  position: absolute;
+  left: 50%;
+  bottom: var(--width-xs);
+  translate: -50% 0;
+}
+
+.Skill {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  &:not(:last-child) {
+    margin-right: -1rem;
+  }
+
+  & > svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}

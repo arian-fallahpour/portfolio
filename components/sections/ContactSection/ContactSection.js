@@ -4,9 +4,9 @@ import Section from "@/components/elements/Section/Section";
 import React, { useEffect } from "react";
 import classes from "./ContactSection.module.scss";
 import Button from "@/components/elements/Button/Button";
-import socials from "@/data/socials";
+import socials from "@/data/socials-data";
 import Image from "next/image";
-import { stagger, useAnimate, useInView } from "framer-motion";
+import { stagger, useAnimate, useInView } from "motion/react";
 import ClipIn from "@/components/elements/ClipIn/ClipIn";
 
 const animations = [

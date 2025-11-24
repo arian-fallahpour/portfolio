@@ -3,7 +3,7 @@
 import React, { useContext, useState } from "react";
 import classes from "./GalleryModal.module.scss";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { join } from "@/utils/helpers";
 import { ArrowLeftIcon } from "../icons/ArrowLeftIcon";
 import { ArrowRightIcon } from "../icons/ArrowRightIcon";

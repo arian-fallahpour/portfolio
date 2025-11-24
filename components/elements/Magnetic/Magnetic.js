@@ -2,10 +2,20 @@
 
 import React, { forwardRef } from "react";
 
-import { motion, useSpring } from "framer-motion";
+import { motion, useSpring } from "motion/react";
 
 const Magnetic = forwardRef(
-  ({ children, style, onMouseMove = (e) => {}, onMouseLeave = (e) => {}, maxShift = 5, ...otherProps }, ref) => {
+  (
+    {
+      children,
+      style,
+      onMouseMove = (e) => {},
+      onMouseLeave = (e) => {},
+      maxShift = 5,
+      ...otherProps
+    },
+    ref
+  ) => {
     const shiftX = useSpring(0);
     const shiftY = useSpring(0);
 

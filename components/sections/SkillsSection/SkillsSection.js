@@ -5,9 +5,9 @@ import classes from "./SkillsSection.module.scss";
 
 import Section from "@/components/elements/Section/Section";
 import Skill from "./Skill";
-import skills from "@/data/skills";
+import skillsData from "@/data/skills-data";
 import Code from "./Code/Code";
-import { stagger, useAnimate, useInView } from "framer-motion";
+import { stagger, useAnimate, useInView } from "motion/react";
 import ClipIn from "@/components/elements/ClipIn/ClipIn";
 import { join } from "@/utils/helpers";
 
@@ -47,19 +47,23 @@ const SkillsSection = () => {
               transition={{ duration: 1 }}
               className={classes.SkillsLight}
             />
-            <h2 className={join("header", "header-section", "light", classes.SkillsHeader)}>Skills</h2>
+            <h2 className={join("header", "header-section", "light", classes.SkillsHeader)}>
+              Skills
+            </h2>
             <ul className={classes.SkillsList}>
-              {skills.map(
-                (skill) =>
-                  skill.visible && (
-                    <li key={skill.key} className={classes.SkillsListItem}>
-                      <Skill name={skill.name} Icon={skill.Icon} />
-                    </li>
-                  )
-              )}
+              {skillsData.map((skill) => (
+                <li key={skill.name} className={classes.SkillsListItem}>
+                  <Skill name={skill.name} Icon={skill.Icon} />
+                </li>
+              ))}
             </ul>
           </div>
-          <ClipIn isVisible={isInView} direction="down" transition={{ delay: 0.5 }} className={classes.Code}>
+          <ClipIn
+            isVisible={isInView}
+            direction="down"
+            transition={{ delay: 0.5 }}
+            className={classes.Code}
+          >
             <Code isVisible={isInView} delay={1.25} duration={0.5} />
           </ClipIn>
         </div>

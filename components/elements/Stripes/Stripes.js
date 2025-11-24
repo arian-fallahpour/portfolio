@@ -2,14 +2,18 @@
 
 import React, { useEffect, useState } from "react";
 import classes from "./Stripes.module.scss";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "motion/react";
 
 const Stripes = () => {
   const { scrollYProgress } = useScroll();
   const [windowHeight, setWindowHeight] = useState(0);
   const [documentHeight, setDocumentHeight] = useState(0);
 
-  const scrollOffset = useTransform(scrollYProgress, [0, 1], [windowHeight * (8 / 10), documentHeight]);
+  const scrollOffset = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [windowHeight * (8 / 10), documentHeight]
+  );
   const scrollOffsetSpring = useSpring(scrollOffset, {
     stiffness: 100,
     damping: 30,

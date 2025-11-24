@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import classes from "./ExperienceSection.module.scss";
-import { stagger, useAnimate, useInView } from "framer-motion";
+import { stagger, useAnimate, useInView } from "motion/react";
 import { join } from "@/utils/helpers";
 
 const animations = [

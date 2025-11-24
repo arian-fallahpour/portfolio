@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import classes from "./ExperienceSection.module.scss";
-import { useScroll, motion, useTransform, useMotionValueEvent, useSpring } from "framer-motion";
+import { useScroll, motion, useTransform, useMotionValueEvent, useSpring } from "motion/react";
 
 const Timeline = () => {
   const ref = useRef();

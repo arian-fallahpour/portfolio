@@ -1,9 +1,8 @@
-import CIcon from "@/components/elements/icons/CIcon";
-import JavascriptIcon from "@/components/elements/icons/JavascriptIcon";
-import PythonIcon from "@/components/elements/icons/PythonIcon";
-import codeFormatters, { formatJavascriptCode } from "@/utils/formatCode";
+import CPlusPlusIcon from "@/components/elements/icons/skills/CPlusPlusIcon";
+import JavascriptIcon from "@/components/elements/icons/skills/JavaScriptIcon";
+import PythonIcon from "@/components/elements/icons/skills/PythonIcon";
 
-export const tabs = [
+export const codeData = [
   {
     Icon: JavascriptIcon,
     language: "javascript",
@@ -17,10 +16,11 @@ function main() {
 
     console.log(c); // 3
 
-    return c
+    return c;
 }
 
 main();
+
 `,
   },
   {
@@ -39,12 +39,13 @@ def main():
     return c
 
 main();
+
 `,
   },
   {
-    Icon: CIcon,
-    language: "c",
-    filename: "main.c",
+    Icon: CPlusPlusIcon,
+    language: "cpp",
+    filename: "main.cpp",
     code: `
 #include <stdio.h>
 
@@ -56,12 +57,11 @@ int main(void) {
 
     printf("%d", c); // 3
 
-    return c
+    return c;
 }
 
 main();
+
 `,
   },
 ];
-
-export const formattedCode = tabs.map((tab) => codeFormatters[tab.language](tab.code));

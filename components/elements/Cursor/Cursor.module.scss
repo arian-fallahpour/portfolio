@@ -1,2 +1,29 @@
+.Cursor,
+.Ring {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  translate: -50% -50%;
+  pointer-events: none;
+}
+
 .Cursor {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  background: rgba(white, 0.4);
+  mix-blend-mode: difference;
+}
+
+.Ring {
+  z-index: 9998;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4rem;
+  height: 4rem;
+
+  border: 2px dashed white;
+  mix-blend-mode: difference;
 }

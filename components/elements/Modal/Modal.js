@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import classes from "./Modal.module.scss";
 import { ModalContext } from "@/store/modal-context";
 import { join } from "@/utils/helpers";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 
 const Modal = () => {
   const { isVisible, content } = useContext(ModalContext);

@@ -6,6 +6,7 @@ import classes from "./Button.module.scss";
 import { join, toCap } from "@/utils/helpers";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Magnetic from "../Magnetic/Magnetic";
 
 const Button = forwardRef(
   (
@@ -17,6 +18,8 @@ const Button = forwardRef(
       isActive,
       isDisabled,
       isLoading,
+      isMagnetic = true,
+      cursorBehavior = "morph",
       openNewTab,
       children,
       styleName,
@@ -31,7 +34,8 @@ const Button = forwardRef(
     const router = useRouter();
 
     // Add onFocus/onBlur if it doesn't exist mouseEnter/mouseLeave does
-    if (otherProps.onMouseEnter && !otherProps.onFocus) otherProps.onFocus = otherProps.onMouseEnter;
+    if (otherProps.onMouseEnter && !otherProps.onFocus)
+      otherProps.onFocus = otherProps.onMouseEnter;
     if (otherProps.onMouseLeave && !otherProps.onBlur) otherProps.onBlur = otherProps.onMouseLeave;
 
     // Determine className
@@ -58,7 +62,7 @@ const Button = forwardRef(
       if (isForwardButton) router.forward();
     };
 
-    return (
+    const buttonElement = (
       <Tag
         className={buttonClassName}
         href={otherProps.href}
@@ -68,11 +72,18 @@ const Button = forwardRef(
         {...otherProps}
         target={openNewTab ? "_blank" : undefined}
         ref={ref}
+        data-cursor={cursorBehavior}
       >
         {children}
         {isLoading && <span className={classes.loader} />}
       </Tag>
     );
+
+    if (isMagnetic) {
+      return <Magnetic maxShift={20}>{buttonElement}</Magnetic>;
+    } else {
+      return buttonElement;
+    }
   }
 );
 Button.displayName = "Button";

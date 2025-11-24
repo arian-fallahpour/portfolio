@@ -1,5 +1,6 @@
 .Code {
   perspective: 105rem;
+  margin-left: -3rem;
 }
 
 .Window {
@@ -9,19 +10,15 @@
   overflow: hidden;
   border: var(--code-border);
   box-shadow: var(--box-shadow-large);
-  transform: rotateY(-10deg) translate(-9px);
 
   opacity: 0;
-  translate: 2rem 0;
+  rotate: y -10deg;
+  translate: 0 2rem;
 
   transition: scale 0.5s ease-in-out, transform 0.5s ease;
 
-  &:hover {
-    scale: 1.05;
-  }
-
   &:active {
-    scale: 1.025;
+    scale: 0.98;
   }
 }
 
@@ -42,40 +39,40 @@
   justify-content: flex-start;
   align-items: center;
   padding: 0 var(--width-xs);
+}
 
-  &Buttons {
-    display: flex;
-    gap: 0.75rem;
-    padding: 1.25rem 0;
+.Buttons {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1.25rem 0;
+}
+
+.Button {
+  display: block;
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 100%;
+
+  &:nth-child(1) {
+    background: #fc5f57;
   }
 
-  &Button {
-    display: block;
-    height: 1.25rem;
-    width: 1.25rem;
-    border-radius: 100%;
-
-    &:nth-child(1) {
-      background: #fc5f57;
-    }
-
-    &:nth-child(2) {
-      background: #febc2e;
-    }
-
-    &:nth-child(3) {
-      background: #27c840;
-    }
+  &:nth-child(2) {
+    background: #febc2e;
   }
 
-  &Tabs {
-    display: flex;
-    gap: 0.5rem;
-    padding: 0.5rem 0;
+  &:nth-child(3) {
+    background: #27c840;
   }
 }
 
-.Header > .HeaderTabs > button.HeaderTab {
+.Tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+button.Tab {
   display: flex;
   gap: 0.75rem;
   align-items: center;
@@ -93,33 +90,41 @@
     color: var(--code-text-light);
     border-color: rgba(white, 0.1);
   }
-}
 
-.Main {
-  transition: height 0.5s;
+  & > svg {
+    width: 2rem;
+    height: 2rem;
+  }
 }
 
 .Editor {
   padding: 1rem var(--width-sm);
   user-select: none;
   grid-row: 1 / span 2;
-
-  &Content {
-  }
 }
 
-.Line {
+.Content {
+  display: flex;
+  height: auto;
+
+  transition: height 0.3s ease-in-out;
+}
+
+.Text {
+}
+
+.Lines {
+  display: grid;
+  align-content: flex-start;
   margin-right: 2rem;
+  align-self: start;
+}
+
+.Number {
   width: 2ch;
   display: inline-block;
 }
 
 .Character {
-  opacity: 0;
   visibility: hidden;
-
-  &.revealed {
-    opacity: 1;
-    visibility: visible;
-  }
 }

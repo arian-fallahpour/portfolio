@@ -12,7 +12,7 @@ import { join } from "@/utils/helpers";
 import Button from "@/components/elements/Button/Button";
 import { ModalContext } from "@/store/modal-context";
 import GalleryModal from "@/components/elements/GalleryModal/GalleryModal";
-import { stagger, useAnimate, useInView } from "framer-motion";
+import { stagger, useAnimate, useInView } from "motion/react";
 import ClipIn from "@/components/elements/ClipIn/ClipIn";
 
 const animations = [
@@ -76,7 +76,13 @@ const EducationSection = () => {
       </ClipIn>
       <div className={classes.Content}>
         <div className={classes.Certification}>
-          <Button className={classes.Images} styleName="unstyled" onClick={showGalleryModalHandler}>
+          <Button
+            className={classes.Images}
+            styleName="unstyled"
+            onClick={showGalleryModalHandler}
+            cursorBehavior={null}
+            isMagnetic={false}
+          >
             <div className={classes.Image}>
               <Image src="/images/certificates/react.jpg" alt="React Certificate" fill />
             </div>

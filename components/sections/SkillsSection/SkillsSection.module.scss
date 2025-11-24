@@ -61,19 +61,24 @@ section.SkillsSection {
   display: flex;
   gap: var(--width-xs);
   align-items: center;
+  padding: 1rem 1.5rem;
+  border-radius: 100rem;
+  border: 1px solid transparent;
 
   color: var(--text-color-paragraph-light);
 
+  transition: background-color 0.3s ease, border-color 0.3s ease, scale 0.1s ease;
+
+  &:hover {
+    background-color: var(--color-panel-background);
+    border-color: var(--color-panel-border);
+  }
+
+  &:active {
+    scale: 0.95;
+  }
+
   &Icon {
-    border-radius: 100%;
-    border: 1px solid var(--skills-foreground-2);
-    background-image: linear-gradient(
-      to top,
-      var(--skills-foreground-1) calc(50% - 20px),
-      var(--skills-foreground-2) calc(50% + 20px)
-    );
-    width: 5rem;
-    height: 5rem;
     display: grid;
     justify-items: center;
     align-items: center;
@@ -91,7 +96,9 @@ section.SkillsSection {
 }
 
 .Code {
-  height: 50rem;
+  min-height: 50rem;
+  width: 100%;
+  height: 100%;
   display: grid;
   align-items: center;
   padding: var(--width-section-gap);

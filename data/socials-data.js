@@ -1,4 +1,4 @@
-import { GithubIcon } from "@/components/elements/icons/GithubIcon";
+import { GithubIcon } from "@/components/elements/icons/skills/GithubIcon";
 import { LinkedInIcon } from "@/components/elements/icons/LinkedInIcon";
 import { MailIcon } from "@/components/elements/icons/MailIcon";
 import { PhoneIcon } from "@/components/elements/icons/PhoneIcon";

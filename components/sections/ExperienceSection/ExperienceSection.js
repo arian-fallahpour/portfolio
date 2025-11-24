@@ -3,8 +3,8 @@
 import Section from "@/components/elements/Section/Section";
 import React, { useEffect } from "react";
 import classes from "./ExperienceSection.module.scss";
-import experiences from "@/data/experiences";
-import { useAnimate, useInView } from "framer-motion";
+import experiences from "@/data/experiences-data";
+import { useAnimate, useInView } from "motion/react";
 import Experience from "./Experience";
 import Timeline from "./Timeline";
 
