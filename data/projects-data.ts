@@ -1,11 +1,18 @@
 import { ProjectType } from "@/Types/ProjectType";
 import { Skill } from "@/Types/SkillType";
 
+import mipsDataPathImageSrc from "@/public/images/projects/mips-datapath.png";
 import batOSImageSrc from "@/public/images/projects/bat-os-1.png";
 import courseTrackerImageSrc from "@/public/images/projects/course-tracker.png";
 import turboTutImageSrc from "@/public/images/projects/turbotut.png";
 
 const projectsData: ProjectType[] = [
+  {
+    name: "MIPS Datapath",
+    imageSrc: mipsDataPathImageSrc,
+    skills: [Skill.Verilog],
+    href: new URL("https://github.com/arian-fallahpour/verilog-hdl-datapath"),
+  },
   {
     name: "BatOS",
     imageSrc: batOSImageSrc,
