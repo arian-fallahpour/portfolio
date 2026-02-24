@@ -22,10 +22,10 @@ const outlineOffset = 10;
 
 const Cursor = () => {
   const [isDefaultMode, setIsDefaultMode] = useState(true);
-  const cursorX = useSpring(0, { stiffness: 999, damping: 100 });
-  const cursorY = useSpring(0, { stiffness: 150, damping: 20 });
-  const ringX = useSpring(0, { stiffness: 50, damping: 10 });
-  const ringY = useSpring(0, { stiffness: 50, damping: 10 });
+  const cursorX = useSpring(0, { stiffness: 2000, damping: 100 });
+  const cursorY = useSpring(0, { stiffness: 2000, damping: 100 });
+  const ringX = useSpring(0, { stiffness: 750, damping: 100 });
+  const ringY = useSpring(0, { stiffness: 750, damping: 100 });
 
   const [cursorConfig, setCursorConfig] = useState(defaultCursorStyles);
   const [ringConfig, setRingConfig] = useState(defaultRingStyles);
