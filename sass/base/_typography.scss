@@ -1,78 +1,72 @@
 body,
 input,
+input::placeholder,
 label,
 button,
 textarea,
 select {
   line-height: 1.5;
-  font-size: var(--font-size);
+  font-size: var(--font-size-regular);
+  color: var(--color-text);
 }
 
-.header,
-.subtitle,
-.caption,
-.paragraph,
-.ul,
-.li {
-  z-index: var(--z-index-stripes);
+*,
+* * {
+  font-family: var(--font-family-poppins);
 }
 
 .header {
+  text-transform: capitalize;
   line-height: 1.2;
-  color: var(--text-color-title-dark);
+  color: var(--color-title);
+  font-weight: var(--font-weight-semibold);
+  align-items: center;
 
   &.light {
-    color: var(--text-color-title-light);
+    color: var(--color-title-light);
   }
 }
 
 .header-title {
-  font-size: 6rem;
-  text-transform: capitalize;
-  font-weight: 800;
+  font-size: 5rem;
+  font-weight: var(--font-weight-bold);
 }
 
 .header-section {
-  font-size: 4rem;
-  text-transform: capitalize;
-  font-weight: 800;
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.header-subsection {
+  font-size: 2.25rem;
 }
 
 .header-card {
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+.header-text {
+  font-size: var(--font-size-regular);
 }
 
 .subtitle {
-  font-size: 1.5rem;
-  font-weight: 300;
-  line-height: 1.2;
-  font-weight: 700;
-  color: var(--text-color-subtitle-dark);
-  text-transform: uppercase;
-
-  &.light {
-    color: var(--text-color-subtitle-light);
-  }
-}
-
-.caption {
-  text-transform: uppercase;
-  font-size: var(--font-size);
+  font-size: 2.25rem;
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
 }
 
 .paragraph,
 .ul,
-.li {
-  font-size: var(--font-size);
-  color: var(--text-color-paragraph-dark);
+.li,
+.caption {
+  font-size: var(--font-size-regular);
+  color: var(--color-text);
 
   &.light {
-    color: var(--text-color-paragraph-light);
+    color: var(--color-text-light);
   }
 }
 
 .ul {
-  padding-left: 2rem;
+  padding-inline-start: 2rem;
 }

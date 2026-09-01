@@ -1,0 +1,41 @@
+@use "@/sass/abstracts/mixins" as *;
+
+.Page {
+  display: flex;
+  flex-direction: column;
+}
+
+.Container {
+  @include max-width(var(--layout-max-width));
+
+  padding-inline: var(--layout-gutter);
+}
+
+.Hero {
+  padding-block: var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+
+  .Container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    max-width: 70rem;
+  }
+}
+
+.Section {
+  padding-block: var(--space-xl);
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .Container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  // offset sticky-header height for in-page anchor jumps
+  scroll-margin-top: var(--header-height);
+}

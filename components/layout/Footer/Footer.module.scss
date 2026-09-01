@@ -1,0 +1,45 @@
+@use "@/sass/abstracts/mixins" as *;
+
+.Footer {
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.Inner {
+  @include max-width(var(--layout-max-width));
+
+  padding: var(--space-lg) var(--layout-gutter);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+
+  @include respond(38em) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.Copy {
+  font-size: 1.4rem;
+  color: var(--color-text-light);
+}
+
+.Socials {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+.SocialLink {
+  font-size: 1.4rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-light);
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}

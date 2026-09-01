@@ -2,18 +2,24 @@
   text-align: center;
 }
 
-.text-gradient-primary {
-  color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(to top, var(--color-primary-dark), var(--color-primary-light));
-  text-shadow: 0 0.2em 0.5em rgba(var(--color-primary-rgb), 0.3);
+.underline {
+  text-decoration: underline;
 }
 
-.text-gradient-gold {
-  color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(to bottom, #ffd700, #73551b);
-  filter: drop-shadow(0 1px 0px #ffd700);
+.bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.captilaize {
+  text-transform: capitalize;
 }
 
 .margin-bottom-auto {

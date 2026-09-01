@@ -1,63 +1,179 @@
+// ============================================================================
+//  COLOR SYSTEM — "TACTICAL HUD"
+//  Military / high-tech aesthetic.
+//
+//  DARK is the default theme (gunmetal + phosphor-green HUD).
+//  LIGHT is a "desert / day-ops" theme (sand + coyote brown + dark olive).
+//
+//  Theme resolution:
+//    - :root                          -> dark (always applied as the base)
+//    - prefers-color-scheme: light    -> light, unless [data-theme="dark"] is set
+//    - [data-theme="light"]           -> force light
+//    - [data-theme="dark"]            -> force dark (wins over the media query)
+//
+//  All UI should consume the semantic tokens (--color-*), never the raw
+//  palette values, so both themes stay in sync.
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+//  LIGHT THEME TOKENS (shared by the media query + the explicit opt-in)
+// ----------------------------------------------------------------------------
+@mixin theme-light {
+  color-scheme: light;
+
+  // --- Brand / accents ---------------------------------------------------
+  --color-primary: #3f6212; // dark olive-green — links, CTAs, active state
+  --color-primary-hover: #4d7818;
+  --color-primary-muted: #b9c99a; // faint fills, inactive tracks
+  --color-primary-contrast: #f4f2e8; // text/icons on a --color-primary fill
+
+  --color-accent: #b5730f; // burnt amber — highlights, focus accents
+  --color-accent-hover: #9c6109;
+
+  // --- Status ----------------------------------------------------------
+  --color-info: #1f7a82; // radar cyan
+  --color-success: #3f7d1f;
+  --color-warning: #b5730f;
+  --color-danger: #b42318; // alert red
+  --color-danger-hover: #991a12;
+
+  // --- Surfaces ------------------------------------------------------------
+  --color-background: #e9e5d8; // page base — sand
+  --color-surface: #f3f1e7; // cards, panels
+  --color-surface-raised: #fbfaf3; // popovers, hovered rows, tooltips
+  --color-surface-sunken: #ddd8c6; // wells, code blocks, insets
+
+  // --- Lines -------------------------------------------------------------
+  --color-border: #c6bda3;
+  --color-border-strong: #a89d7e; // dividers that need to read as structure
+  --color-divider: #d4ccb5;
+
+  // --- Text ------------------------------------------------------------
+  --color-title: #1f2417; // headings
+  --color-title-light: #5c6047; // de-emphasised headings (.header.light)
+  --color-text: #2c3122; // body copy
+  --color-text-light: #61654f; // secondary / muted copy (.paragraph.light)
+  --color-text-disabled: #9a9781;
+  --color-text-on-accent: #f4f2e8; // text on --color-accent / --color-danger
+
+  // --- Utility ---------------------------------------------------------
+  --color-olive: #6b7635; // olive-drab neutral — tags, chips, badges
+  --color-gunmetal: #c9c4b0; // hardware/neutral chrome
+  --color-scanline: rgba(63, 98, 18, 0.05); // HUD scanline overlay tint
+  --color-focus-ring: #3f6212;
+  --color-selection-bg: rgba(63, 98, 18, 0.22);
+  --color-selection-text: #1f2417;
+  --color-overlay: rgba(43, 41, 30, 0.45); // modal / drawer backdrop
+
+  // --- Effects (high-tech glow + depth) ---------------------------------
+  --glow-primary: 0 0 0.5rem rgba(63, 98, 18, 0.25);
+  --glow-danger: 0 0 0.5rem rgba(180, 35, 24, 0.3);
+  --shadow-hud: 0 0.25rem 1.25rem rgba(90, 82, 58, 0.25);
+}
+
+// ----------------------------------------------------------------------------
+//  DARK THEME — DEFAULT
+// ----------------------------------------------------------------------------
 :root {
-  // Colors
-  --color-primary-light: rgb(0, 187, 255);
-  --color-primary-light-rgba: 0, 187, 255;
-  --color-primary: rgb(0, 119, 210);
-  --color-primary-rgb: 0, 118, 209;
-  --color-primary-dark: rgb(0, 92, 163);
-  --color-primary-dark-rgb: 0, 92, 163;
+  color-scheme: dark;
 
-  --color-stripes: rgba(108, 108, 108, 0.355);
+  // --- Brand / accents ---------------------------------------------------
+  --color-primary: #9ee84a; // phosphor green — links, CTAs, HUD readouts
+  --color-primary-hover: #b6f472;
+  --color-primary-muted: #5f8a2e; // dim green — subtle borders / fills
+  --color-primary-contrast: #0a0e0c; // text/icons on a --color-primary fill
 
-  --color-background-primary: #fff;
-  --color-background-secondary: #2d3137;
-  --color-foreground: #ededed;
-  --color-panel-background: rgba(255, 255, 255, 0.1);
-  --color-panel-border: rgba(255, 255, 255, 0.3);
+  --color-accent: #f5a623; // CRT amber — highlights, focus accents
+  --color-accent-hover: #ffbe4d;
 
-  // widths
-  --width-xs: 1.5rem;
-  --width-sm: 3rem;
-  --width-md: 5rem;
-  --width-lg: 7.5rem;
-  --width-section-max: 110rem;
-  --width-section-padding: var(--width-sm);
-  --width-section-gap: var(--width-sm);
-  --width-text-spacing: 0.5em;
+  // --- Status ----------------------------------------------------------
+  --color-info: #3ec9d3; // radar cyan
+  --color-success: #52c41a;
+  --color-warning: #f5a623;
+  --color-danger: #e5484d; // alert red
+  --color-danger-hover: #ff5c61;
 
-  // Border
-  --border-radius: 2rem;
-  --border-stripes: 1px dashed var(--color-stripes);
-  --border-panel: 1px solid var(--color-panel-border);
+  // --- Surfaces ------------------------------------------------------------
+  --color-background: #0a0e0c; // page base — near-black olive
+  --color-surface: #111814; // cards, panels
+  --color-surface-raised: #1a231d; // popovers, hovered rows, tooltips
+  --color-surface-sunken: #060907; // wells, code blocks, insets
 
-  // Text colors
-  --text-color-title-light: #fff;
-  --text-color-title-dark: #000;
-  --text-color-subtitle-light: rgba(255, 255, 255, 0.6);
-  --text-color-subtitle-dark: rgba(0, 0, 0, 0.3);
-  --text-color-paragraph-light: rgb(188, 188, 188);
-  --text-color-paragraph-dark: rgb(55, 55, 55);
+  // --- Lines -------------------------------------------------------------
+  --color-border: #29332b;
+  --color-border-strong: #3c4a3f; // dividers that need to read as structure
+  --color-divider: #1e2620;
 
-  // Font
-  --font-size: 1.5rem;
+  // --- Text ------------------------------------------------------------
+  --color-title: #eef4ea; // headings
+  --color-title-light: #aab4a6; // de-emphasised headings (.header.light)
+  --color-text: #cdd8c9; // body copy
+  --color-text-light: #8a968a; // secondary / muted copy (.paragraph.light)
+  --color-text-disabled: #5a635a;
+  --color-text-on-accent: #0a0e0c; // text on --color-accent / --color-danger
 
-  // Code
-  --code-background: #161b22;
-  --code-border: 1px solid #464b53;
-  --code-text-dark: #595e64;
-  --code-text-light: #a6a6a6;
+  // --- Utility ---------------------------------------------------------
+  --color-olive: #3d4a23; // olive-drab neutral — tags, chips, badges
+  --color-gunmetal: #2a2f2c; // hardware/neutral chrome
+  --color-scanline: rgba(158, 232, 74, 0.04); // HUD scanline overlay tint
+  --color-focus-ring: #9ee84a;
+  --color-selection-bg: rgba(158, 232, 74, 0.25);
+  --color-selection-text: #eef4ea;
+  --color-overlay: rgba(4, 7, 5, 0.72); // modal / drawer backdrop
 
-  // Shadow
-  --box-shadow-large: 0 1rem 3rem -1rem rgba(29, 42, 57, 0.8);
+  // --- Effects (high-tech glow + depth) ---------------------------------
+  --glow-primary: 0 0 0.5rem rgba(158, 232, 74, 0.45),
+    0 0 1.5rem rgba(158, 232, 74, 0.15);
+  --glow-danger: 0 0 0.5rem rgba(229, 72, 77, 0.45);
+  --shadow-hud: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.55);
+}
 
-  // Other
-  --skills-foreground-1: #34383e;
-  --skills-foreground-2: #5b5f64;
+// ----------------------------------------------------------------------------
+//  LIGHT THEME — opt-in
+// ----------------------------------------------------------------------------
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    @include theme-light;
+  }
+}
 
-  --experience-number-background-1: rgb(40, 40, 40);
-  --experience-number-background-2: rgb(70, 70, 70);
-  --experience-timeline-border: var(--color-primary);
+:root[data-theme="light"] {
+  @include theme-light;
+}
 
-  --z-index-stripes: 1;
-  --z-index-modal: 100;
+// ============================================================================
+//  TYPOGRAPHY + LAYOUT TOKENS (theme-independent)
+// ============================================================================
+:root {
+  // --- Font families ---------------------------------------------------------
+  // `--font-family-poppins` is also injected by next/font (app/layout.tsx);
+  // this declaration is the fallback if the optimized font fails to load.
+  --font-family-poppins: "Poppins", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  // --- Font sizes ----------------------------------------------------------
+  --font-size-regular: 1.6rem;
+
+  // --- Font weights --------------------------------------------------------
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  // --- Layout ------------------------------------------------------------
+  --layout-max-width: 120rem;
+  --layout-gutter: 2.4rem;
+  --header-height: 7.2rem;
+
+  // --- Spacing scale -----------------------------------------------------
+  --space-xs: 0.8rem;
+  --space-sm: 1.6rem;
+  --space-md: 2.4rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+
+  // --- Radii -----------------------------------------------------------
+  --radius-sm: 0.4rem;
+  --radius-md: 0.8rem;
+  --radius-lg: 1.6rem;
 }
