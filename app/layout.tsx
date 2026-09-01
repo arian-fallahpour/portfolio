@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
 
 import "@/sass/globals.scss";
+import Nav from "@/components/layout/Nav/Nav";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -14,19 +15,16 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Arian Fallahpour — Portfolio",
+  title: "Arian Fallahpour-Sichani | Portfolio",
   description:
     "Personal portfolio of Arian Fallahpour — software engineer. Skills, projects, experience and more.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={poppins.variable}>
       <body>
+        <Nav />
         <Header />
         <main>{children}</main>
         <Footer />
