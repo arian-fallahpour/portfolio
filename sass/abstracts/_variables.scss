@@ -1,80 +1,36 @@
-// ============================================================================
-//  COLOR SYSTEM — "TACTICAL HUD"
-//  Military / high-tech aesthetic.
-//
-//  DARK is the default theme (gunmetal + phosphor-green HUD).
-//  LIGHT is a "desert / day-ops" theme (sand + coyote brown + dark olive).
-//
-//  Theme resolution:
-//    - :root                          -> dark (always applied as the base)
-//    - prefers-color-scheme: light    -> light, unless [data-theme="dark"] is set
-//    - [data-theme="light"]           -> force light
-//    - [data-theme="dark"]            -> force dark (wins over the media query)
-//
-//  All UI should consume the semantic tokens (--color-*), never the raw
-//  palette values, so both themes stay in sync.
-// ============================================================================
+:root {
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-superbold: 800;
+  --font-weight-black: 800;
 
-// ----------------------------------------------------------------------------
-//  LIGHT THEME TOKENS (shared by the media query + the explicit opt-in)
-// ----------------------------------------------------------------------------
-@mixin theme-light {
-  color-scheme: light;
+  --font-size-large: 1.6rem;
+  --font-size-regular: 1.3rem;
+  --font-size-small: 1.1rem;
+  --font-size-tiny: 1rem;
+  --font-size-xtiny: 0.7rem;
 
-  // --- Brand / accents ---------------------------------------------------
-  --color-primary: #3f6212; // dark olive-green — links, CTAs, active state
-  --color-primary-hover: #4d7818;
-  --color-primary-muted: #b9c99a; // faint fills, inactive tracks
-  --color-primary-contrast: #f4f2e8; // text/icons on a --color-primary fill
+  --width-xtiny: 0.25rem;
+  --width-tiny: 0.5rem;
+  --width-small: 1rem;
+  --width-regular: 3rem;
+  --width-large: 4.5rem;
+  --width-huge: 6rem;
 
-  --color-accent: #b5730f; // burnt amber — highlights, focus accents
-  --color-accent-hover: #9c6109;
-
-  // --- Status ----------------------------------------------------------
-  --color-info: #1f7a82; // radar cyan
-  --color-success: #3f7d1f;
-  --color-warning: #b5730f;
-  --color-danger: #b42318; // alert red
-  --color-danger-hover: #991a12;
-
-  // --- Surfaces ------------------------------------------------------------
-  --color-background: #e9e5d8; // page base — sand
-  --color-surface: #f3f1e7; // cards, panels
-  --color-surface-raised: #fbfaf3; // popovers, hovered rows, tooltips
-  --color-surface-sunken: #ddd8c6; // wells, code blocks, insets
-
-  // --- Lines -------------------------------------------------------------
-  --color-border: #c6bda3;
-  --color-border-strong: #a89d7e; // dividers that need to read as structure
-  --color-divider: #d4ccb5;
-
-  // --- Text ------------------------------------------------------------
-  --color-title: #1f2417; // headings
-  --color-title-light: #5c6047; // de-emphasised headings (.header.light)
-  --color-text: #2c3122; // body copy
-  --color-text-light: #61654f; // secondary / muted copy (.paragraph.light)
-  --color-text-disabled: #9a9781;
-  --color-text-on-accent: #f4f2e8; // text on --color-accent / --color-danger
-
-  // --- Utility ---------------------------------------------------------
-  --color-olive: #6b7635; // olive-drab neutral — tags, chips, badges
-  --color-gunmetal: #c9c4b0; // hardware/neutral chrome
-  --color-scanline: rgba(63, 98, 18, 0.05); // HUD scanline overlay tint
-  --color-focus-ring: #3f6212;
-  --color-selection-bg: rgba(63, 98, 18, 0.22);
-  --color-selection-text: #1f2417;
-  --color-overlay: rgba(43, 41, 30, 0.45); // modal / drawer backdrop
-
-  // --- Effects (high-tech glow + depth) ---------------------------------
-  --glow-primary: 0 0 0.5rem rgba(63, 98, 18, 0.25);
-  --glow-danger: 0 0 0.5rem rgba(180, 35, 24, 0.3);
-  --shadow-hud: 0 0.25rem 1.25rem rgba(90, 82, 58, 0.25);
+  // --- Layout ------------------------------------------------------------
+  --nav-width: 5.5rem;
+  --frame-width: 1px;
 }
 
-// ----------------------------------------------------------------------------
-//  DARK THEME — DEFAULT
-// ----------------------------------------------------------------------------
-:root {
+@media only screen and (max-width: 38em) {
+  :root {
+    --nav-width: 4.5rem;
+  }
+}
+
+@mixin theme-dark {
   color-scheme: dark;
 
   // --- Brand / accents ---------------------------------------------------
@@ -122,58 +78,27 @@
   --color-overlay: rgba(4, 7, 5, 0.72); // modal / drawer backdrop
 
   // --- Effects (high-tech glow + depth) ---------------------------------
-  --glow-primary: 0 0 0.5rem rgba(158, 232, 74, 0.45),
-    0 0 1.5rem rgba(158, 232, 74, 0.15);
+  --glow-primary: 0 0 0.5rem rgba(158, 232, 74, 0.45), 0 0 1.5rem rgba(158, 232, 74, 0.15);
   --glow-danger: 0 0 0.5rem rgba(229, 72, 77, 0.45);
   --shadow-hud: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.55);
 }
 
-// ----------------------------------------------------------------------------
-//  LIGHT THEME — opt-in
-// ----------------------------------------------------------------------------
+@mixin theme-light {
+  color-scheme: light;
+}
+
+:root {
+  @include theme-dark;
+}
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
     @include theme-light;
   }
 }
-
 :root[data-theme="light"] {
   @include theme-light;
 }
 
-// ============================================================================
-//  TYPOGRAPHY + LAYOUT TOKENS (theme-independent)
-// ============================================================================
-:root {
-  // --- Font families ---------------------------------------------------------
-  // `--font-family-poppins` is also injected by next/font (app/layout.tsx);
-  // this declaration is the fallback if the optimized font fails to load.
-  --font-family-poppins: "Poppins", ui-sans-serif, system-ui, -apple-system,
-    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-  // --- Font sizes ----------------------------------------------------------
-  --font-size-regular: 1.6rem;
-
-  // --- Font weights --------------------------------------------------------
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-
-  // --- Layout ------------------------------------------------------------
-  --layout-max-width: 120rem;
-  --layout-gutter: 2.4rem;
-  --header-height: 7.2rem;
-
-  // --- Spacing scale -----------------------------------------------------
-  --space-xs: 0.8rem;
-  --space-sm: 1.6rem;
-  --space-md: 2.4rem;
-  --space-lg: 4rem;
-  --space-xl: 8rem;
-
-  // --- Radii -----------------------------------------------------------
-  --radius-sm: 0.4rem;
-  --radius-md: 0.8rem;
-  --radius-lg: 1.6rem;
+:root[data-theme="dark"] {
+  @include theme-dark;
 }

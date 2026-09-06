@@ -23,11 +23,25 @@ body {
   background-color: var(--color-background);
   min-height: 100vh;
 
+  // Clears the fixed nav rail; content starts flush against its right border.
+  padding-left: var(--nav-width);
+
   display: flex;
   flex-direction: column;
 
   overflow-x: clip;
   overflow-y: scroll;
+}
+
+// Radar frame — a hairline that traces the viewport, not the content.
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  border: var(--frame-width) solid var(--color-border);
+  pointer-events: none;
 }
 
 button {

@@ -1,0 +1,9 @@
+import * as React from "react";
+import { SVGProps } from "react";
+const MemoryIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...props}>
+    <path fill="none" d="M0 0h24v24H0z" />
+    <path fill="currentColor" d="M9 15V9h6v6zm0 6v-2H5v-4H3v-2h2v-2H3V9h2V5h4V3h2v2h2V3h2v2h4v4h2v2h-2v2h2v2h-2v4h-4v2h-2v-2h-2v2z" />
+  </svg>
+);
+export default MemoryIcon;
