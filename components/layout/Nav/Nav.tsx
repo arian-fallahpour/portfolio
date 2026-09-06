@@ -41,7 +41,7 @@ const Nav = () => {
   // Highlight whichever section is crossing the middle of the viewport.
   useEffect(() => {
     const sections = NAV_ITEMS.map(({ id }) => document.getElementById(id)).filter(
-      (section) => section !== null
+      (section) => section !== null,
     );
     if (sections.length === 0) return;
 
@@ -56,7 +56,7 @@ const Nav = () => {
         const current = NAV_ITEMS.find(({ id }) => visible.has(id));
         if (current) setActiveId(current.id);
       },
-      { rootMargin: "-50% 0px -50% 0px" }
+      { rootMargin: "-50% 0px -50% 0px" },
     );
 
     sections.forEach((section) => observer.observe(section));
