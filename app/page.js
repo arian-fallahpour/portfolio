@@ -12,8 +12,8 @@ export default function HomePage() {
     <Page>
       <Header />
       <EducationSection />
-      <SkillsSection />
       <ExperienceSection />
+      <SkillsSection />
       <ProjectsSection />
       <ContactSection />
       <Stripes />

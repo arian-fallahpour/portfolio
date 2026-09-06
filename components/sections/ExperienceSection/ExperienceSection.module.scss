@@ -113,9 +113,30 @@ section.ExperienceSection {
       opacity: 0;
       translate: 0 2rem;
     }
+
+    :global(.li) {
+      font-size: var(--font-size-sm);
+    }
   }
 
   &Title {
+  }
+
+  &Tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    list-style: none;
+  }
+
+  &Tag {
+    flex: none;
+    white-space: nowrap;
+    padding: 0.3rem 1rem;
+    border-radius: 100rem;
+    border: 1px solid var(--color-primary);
+    font-size: var(--font-size-sm);
+    color: var(--color-primary);
   }
 
   &Number {

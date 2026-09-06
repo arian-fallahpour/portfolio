@@ -21,7 +21,7 @@ const animations = [
   },
 ];
 
-const Experience = ({ index, duration, name, role, list }) => {
+const Experience = ({ index, duration, name, role, list, tags }) => {
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope, { once: true, amount: 1 });
 
@@ -59,6 +59,15 @@ const Experience = ({ index, duration, name, role, list }) => {
               </li>
             ))}
           </ul>
+          {tags?.length > 0 && (
+            <ul className={classes.ExperienceTags}>
+              {tags.map((tag, i) => (
+                <li key={i} className={classes.ExperienceTag}>
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </li>

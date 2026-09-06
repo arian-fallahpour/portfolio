@@ -1,10 +1,17 @@
 section.ProjectsSection {
+  // Fallback first: browsers without small-viewport units keep 100vh
+  --projects-panel-height: 100vh;
+  --projects-panel-height: 100svh;
+  // Cards fill the pinned panel, which is what gives the row something to travel
+  --projects-image-height: min(80rem, calc(var(--projects-panel-height) - 20rem));
+
   background-color: var(--color-background-primary);
   z-index: calc(var(--z-index-stripes) + 1);
   border-bottom: var(--border-stripes);
   margin-bottom: var(--width-sm);
-  // padding-left: 0;
-  // padding-right: 0;
+
+  display: block;
+  padding: 0;
 
   & :global(.section.section-header) {
     opacity: 0;
@@ -22,30 +29,45 @@ section.ProjectsSection {
   width: 100vw;
 }
 
+// Fills the viewport and stays pinned for the whole height of the section
+.Panel {
+  position: sticky;
+  top: 0;
+  height: var(--projects-panel-height);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--width-section-gap);
+  padding-top: var(--width-section-padding);
+  padding-bottom: var(--width-section-padding);
+  overflow: hidden;
+}
+
 .Header {
+  padding-left: var(--width-section-padding);
+  padding-right: var(--width-section-padding);
+
   opacity: 0;
   translate: 0 2rem;
 }
 
-.Projects {
-  overflow: auto;
-  margin-left: calc(var(--width-section-padding) * -1);
-  margin-right: calc(var(--width-section-padding) * -1);
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-  margin-top: -10rem;
-  margin-bottom: -10rem;
+.Viewport {
+  flex: 1;
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
 }
 
-.Container {
+.Track {
   display: flex;
+  align-items: center;
   gap: var(--width-sm);
 
-  white-space: nowrap;
   padding-left: var(--width-section-padding);
   padding-right: var(--width-section-padding);
   width: max-content;
-  min-width: 100%;
+  will-change: transform;
 }
 
 .Project {

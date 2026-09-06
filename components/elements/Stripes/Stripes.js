@@ -21,8 +21,22 @@ const Stripes = () => {
   });
 
   useEffect(() => {
-    setWindowHeight(window.innerHeight);
-    setDocumentHeight(document.querySelector(".main").offsetHeight);
+    const main = document.querySelector(".main");
+    if (!main) return;
+
+    // Sections that size themselves after mount (the pinned projects section)
+    // change the page height, so keep remeasuring instead of reading once
+    const measure = () => {
+      setWindowHeight(window.innerHeight);
+      setDocumentHeight(main.offsetHeight);
+    };
+
+    measure();
+
+    const observer = new ResizeObserver(measure);
+    observer.observe(main);
+
+    return () => observer.disconnect();
   }, []);
 
   return (

@@ -29,7 +29,7 @@ const Button = forwardRef(
       activeClassName,
       ...otherProps
     },
-    ref
+    ref,
   ) => {
     const router = useRouter();
 
@@ -50,7 +50,7 @@ const Button = forwardRef(
       className ? className : null,
       isLoading ? classes.loading : null,
       isDisabled ? classes.disabled : null,
-      isActive ? classes.active : null
+      isActive ? classes.active : null,
     );
 
     // Determine tag
@@ -84,7 +84,7 @@ const Button = forwardRef(
     } else {
       return buttonElement;
     }
-  }
+  },
 );
 Button.displayName = "Button";
 

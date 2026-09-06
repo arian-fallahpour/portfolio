@@ -8,7 +8,6 @@
   box-sizing: inherit;
   -webkit-font-smoothing: antialiased;
 
-  cursor: none !important;
   user-select: none !important;
 }
 
@@ -65,7 +64,10 @@ body {
 .main {
   position: relative;
   background-color: var(--color-background-primary);
-  overflow: hidden;
+
+  // clip instead of hidden: hidden makes this a scroll container, which stops
+  // position: sticky from working for sections pinned to the viewport
+  overflow-x: clip;
 }
 
 button {

@@ -22,8 +22,11 @@
 }
 
 .Image {
-  height: 50rem;
+  height: var(--projects-image-height, 50rem);
   width: auto;
+
+  // Keeps a card from outgrowing narrow screens; object-fit crops instead
+  max-width: 80vw;
 }
 
 .Gradient,

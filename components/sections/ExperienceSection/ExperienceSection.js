@@ -44,6 +44,7 @@ const ExperienceSection = () => {
               name={experience.name}
               role={experience.role}
               list={experience.list}
+              tags={experience.tags}
             />
           ))}
         </ul>
