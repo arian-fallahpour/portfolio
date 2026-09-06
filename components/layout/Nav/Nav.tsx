@@ -10,7 +10,6 @@ import MailIcon from "@/components/icons/MailIcon";
 import MemoryIcon from "@/components/icons/MemoryIcon";
 import MilitaryTechIcon from "@/components/icons/MilitaryTechIcon";
 import PersonIcon from "@/components/icons/PersonIcon";
-import RadarIcon from "@/components/icons/RadarIcon";
 import SchoolIcon from "@/components/icons/SchoolIcon";
 import TerminalIcon from "@/components/icons/TerminalIcon";
 import WorkIcon from "@/components/icons/WorkIcon";
@@ -41,7 +40,7 @@ const Nav = () => {
   // Highlight whichever section is crossing the middle of the viewport.
   useEffect(() => {
     const sections = NAV_ITEMS.map(({ id }) => document.getElementById(id)).filter(
-      (section) => section !== null,
+      (section) => section !== null
     );
     if (sections.length === 0) return;
 
@@ -56,7 +55,7 @@ const Nav = () => {
         const current = NAV_ITEMS.find(({ id }) => visible.has(id));
         if (current) setActiveId(current.id);
       },
-      { rootMargin: "-50% 0px -50% 0px" },
+      { rootMargin: "-50% 0px -50% 0px" }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -70,10 +69,6 @@ const Nav = () => {
 
   return (
     <nav className={classes.Nav} aria-label="Sections">
-      <div className={classes.Brand} aria-hidden="true">
-        <RadarIcon />
-      </div>
-
       <ul className={classes.List}>
         {NAV_ITEMS.map(({ id, label, Icon }) => (
           <li key={id} className={classes.Item}>
@@ -84,20 +79,14 @@ const Nav = () => {
               aria-current={activeId === id ? "true" : undefined}
               onClick={() => scrollToSection(id)}
             >
-              <Icon />
+              <span className={classes.Icon}>
+                <Icon />
+              </span>
+              <span className={classes.Label}>{label}</span>
             </IconButton>
-
-            <span className={classes.Tooltip} aria-hidden="true">
-              {label}
-            </span>
           </li>
         ))}
       </ul>
-
-      <div className={classes.Status} aria-hidden="true">
-        <span className={classes.StatusDot} />
-        <span className={classes.StatusLabel}>Online</span>
-      </div>
     </nav>
   );
 };

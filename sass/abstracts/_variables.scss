@@ -20,14 +20,10 @@
   --width-huge: 6rem;
 
   // --- Layout ------------------------------------------------------------
-  --nav-width: 5.5rem;
+  --nav-item-size: 5.5rem; // side of the square icon box, and each rail row's height
+  --nav-label-width: 1.8rem;
+  --nav-width: calc(var(--nav-item-size) + var(--nav-label-width));
   --frame-width: 1px;
-}
-
-@media only screen and (max-width: 38em) {
-  :root {
-    --nav-width: 4.5rem;
-  }
 }
 
 @mixin theme-dark {

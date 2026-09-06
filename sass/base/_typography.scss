@@ -12,7 +12,7 @@ select {
 
 *,
 * * {
-  font-family: var(--font-family-poppins);
+  font-family: var(--font-family-mono), ui-monospace, monospace;
 }
 
 .header {
